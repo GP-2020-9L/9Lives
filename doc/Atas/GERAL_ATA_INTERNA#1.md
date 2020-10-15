@@ -92,7 +92,7 @@ Reunião do dep. de Requisitos | Dep. De Requisitos | Sexta-feira, 14/10/2020 | 
 <br/>
 
 Tarefas | Tarefa será realizada por |  Prazo estimado
---- | --- | --- | ---
+--- | --- | --- | 
 Orçamento | Dep. De Requisitos | ----
 
 
