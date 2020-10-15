@@ -49,7 +49,7 @@ rev | author | things done on revision | when
 <br/>
 
 ###  Point x 
-#### Discução:
+#### Discussão:
 * A tarefa X foi realizada com dificuldade, não tendo sido terminada por falta de informação do cliente relativa aos servidores. O Carlos mostrou descontentamento com a introdução do novo processo
 #### Conclusão:
 * O tempo previsto para a realização das tarefas desta semana foi sobre-estimado. No geral a equipa conseguiu concluir as tarefas todas. Marcar nova reunião com o cliente para esclarecer a dúvida relativa aos servidores
@@ -57,7 +57,7 @@ rev | author | things done on revision | when
 <br/>
 
 ### Point y
-#### Discução:
+#### Discussão:
 * A tarefa X foi realizada com dificuldade, não tendo sido terminada por falta de informação do cliente relativa aos servidores. O Carlos mostrou descontentamento com a introdução do novo processo
 #### Conclusão:
 * O tempo previsto para a realização das tarefas desta semana foi sobre-estimado. No geral a equipa conseguiu concluir as tarefas todas. Marcar nova reunião com o cliente para esclarecer a dúvida relativa aos servidores
@@ -76,7 +76,7 @@ Tarefas | Tarefa realizada por |  Prazo estimado | Prazo real/ tarefa terminada
 <br/>
 
 ###  Point x 
-#### Discução:
+#### Discussão:
 * A tarefa X foi realizada com dificuldade, não tendo sido terminada por falta de informação do cliente relativa aos servidores. O Carlos mostrou descontentamento com a introdução do novo processo
 #### Conclusão:
 * O tempo previsto para a realização das tarefas desta semana foi sobre-estimado. No geral a equipa conseguiu concluir as tarefas todas. Marcar nova reunião com o cliente para esclarecer a dúvida relativa aos servidores
@@ -84,7 +84,7 @@ Tarefas | Tarefa realizada por |  Prazo estimado | Prazo real/ tarefa terminada
 <br/>
 
 ### Point y
-#### Discução:
+#### Discussão:
 * A tarefa X foi realizada com dificuldade, não tendo sido terminada por falta de informação do cliente relativa aos servidores. O Carlos mostrou descontentamento com a introdução do novo processo
 #### Conclusão:
 * O tempo previsto para a realização das tarefas desta semana foi sobre-estimado. No geral a equipa conseguiu concluir as tarefas todas. Marcar nova reunião com o cliente para esclarecer a dúvida relativa aos servidores

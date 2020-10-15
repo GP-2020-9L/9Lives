@@ -1,4 +1,3 @@
-
 # Ata de reunião com exploratório
 
 ### <p style='padding-left:65%'> <b>Data:</b> Sexta-feira, 09/10/2020 <insert date_dime></p>
@@ -35,7 +34,7 @@ Rev # | Autor|  Descrição | Data
 <br/>
 
 ###  Questão sobre software
-#### Discução:
+#### Discussão:
 * Modo a serem armazenados os dados (por indivíduo ou tabela geral)
 * Qual o método de recolha de dados caso estes fossem armazenados por indivíduo
 * Forma que a estatística chegaria ao utilizador
