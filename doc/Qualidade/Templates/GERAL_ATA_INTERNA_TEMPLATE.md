@@ -1,3 +1,15 @@
+# TEMPLATE PARA REDEGIR A ATA DE REUNIÃO INTERNA
+
+### TABELA DE VERSÕES
+
+|**Versão**|**Autor**|**Data**|**Notas**
+|---|---|---|---
+|0.1|Sofia Lebreiro|08/10|Versão inicial
+|0.2|Alexandre Brito|15/10|Conversão para markdown
+|0.3|Alexandre Brito|15/10|Adição de tabela de revisões
+
+<início do template>
+
 # Ata de reunião interna
 
 ## <p style='padding-left:15%'> <b> [Equipa] </b> <insert date_dime></p>

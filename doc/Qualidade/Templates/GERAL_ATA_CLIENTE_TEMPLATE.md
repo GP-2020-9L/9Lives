@@ -1,3 +1,15 @@
+# TEMPLATE PARA REDEGIR A ATA DE REUNIÃO COM CLIENTE
+
+### TABELA DE VERSÕES
+
+|**Versão**|**Autor**|**Data**|**Notas**
+|---|---|---|---
+|0.1|Sofia Lebreiro|08/10|Versão inicial
+|0.2|Alexandre Brito|15/10|Conversão para markdown
+|0.3|Alexandre Brito|15/10|Adição de tabela de revisões
+
+<início do template>
+
 # Ata de reunião com exploratório
 
 ### <p style='padding-left:65%'> <b>Data:</b> [Insert date here]<insert date_dime></p>
@@ -37,15 +49,6 @@ rev | author | things done on revision | when
 * O tempo previsto para a realização das tarefas desta semana foi sobre-estimado. No geral a equipa conseguiu concluir as tarefas todas. Marcar nova reunião com o cliente para esclarecer a dúvida relativa aos servidores
 
 <br/>
-
-
-Tarefas | Tarefa realizada por |  Prazo estimado | Prazo real/ tarefa terminada
---- | --- | --- | --- 
-[Tópico da tarefa] | Nome | Sexta-feira, 18/03/2016; 13:00 | [Date]
-
-<br/> 
-<br/>
-
 
 ## Aprovação por qualidade
 #### <b> Nome:</b> [Nome] 
