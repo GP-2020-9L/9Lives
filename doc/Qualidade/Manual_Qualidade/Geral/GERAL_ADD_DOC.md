@@ -6,8 +6,8 @@
 
 | Versão | Data | Autor(es) | Descrição |
 |---|---|---|---|
-| 0.1 | 22/10 | Alexandre | Criação do documento |
-
+| 0.1 | 22/10 | Alexandre Brito | Criação do documento |
+| 0.2 | 22/10 | Alexandre Brito | Alterações no output e adicionada diretriz 10. |
 </br>
 
 ### **Descrição do Processo**
@@ -48,6 +48,10 @@ Este processo é ativado sempre que é um membro necessita de adicionar um artef
 7. Mudar o nome do branch para ser igual ao nome do artefacto a ser adicionado
 8. Premir "Propose changes"
 9. Na nova página premir "Create pull request"
+10. Aguardar revisão do Pull request
+  1. Em caso de ser aceite o processo termina
+  2. Em caso de ser necessário alguma alteração esta será mencionada no pull request. 
+    1. Após feita a alteração necessária o processo volta ao passo 10.
 
 
 </br>
@@ -56,7 +60,7 @@ Este processo é ativado sempre que é um membro necessita de adicionar um artef
 
 ---
 
-Novo pull request no repositório para ser verificado.
+Novo documento adicionado ao repositório.
 
 </br>
 
