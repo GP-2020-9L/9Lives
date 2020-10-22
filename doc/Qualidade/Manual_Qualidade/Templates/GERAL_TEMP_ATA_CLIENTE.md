@@ -6,7 +6,7 @@
 |---|---|---|---
 |0.1|Sofia Lebreiro|08/10|Versão inicial
 |0.2|Alexandre Brito|15/10|Conversão para markdown
-|0.3|Alexandre Brito|15/10|Adição de tabela de revisões
+|0.3|Alexandre Brito|15/10|Adição de tabela de revisões e mudanºa do título segundo processo
 
 <início do template>
 
