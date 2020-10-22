@@ -47,6 +47,7 @@ Este processo é ativado sempre que é um membro necessita de adicionar um artef
 6. Selecionar a segunda opção "Create a new branch for this commit and start a pull request"
 7. Mudar o nome do branch para ser igual ao nome do artefacto a ser adicionado
 8. Premir "Propose changes"
+9. Na nova página premir "Create pull request"
 
 
 </br>
