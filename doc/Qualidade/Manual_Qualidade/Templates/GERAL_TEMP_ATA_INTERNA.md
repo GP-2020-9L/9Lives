@@ -7,6 +7,7 @@
 |0.1|Sofia Lebreiro|08/10|Versão inicial
 |0.2|Alexandre Brito|15/10|Conversão para markdown
 |0.3|Alexandre Brito|15/10|Adição de tabela de revisões
+|0.4|Alexandre Brito|22/10|Correção de formatação na última tabela e alteração de nome seguindo o processo
 
 <início do template>
 
@@ -92,7 +93,7 @@ Tarefas | Tarefa realizada por |  Prazo estimado | Prazo real/ tarefa terminada
 <br/>
 
 Tarefas | Tarefa será realizada por |  Prazo estimado
---- | --- | --- | ---
+--- | --- | --- |
 [Tópico da tarefa] | Nome | Sexta-feira, 18/03/2016; 13:00
 
 
