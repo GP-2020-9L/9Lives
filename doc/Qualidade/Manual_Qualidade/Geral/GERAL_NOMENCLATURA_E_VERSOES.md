@@ -7,6 +7,7 @@
 | Versão | Data | Autor(es) | Descrição |
 |---|---|---|---|
 | 0.1 | 15/10 | Ana Lebreiro | Criação do processo |
+| 0.2 | 22/10 | Alexandre Brito | Validação e correção na formatação da tabela |
 
 </br>
 
@@ -40,7 +41,7 @@ Esta é uma norma fundamental para guiar as nomeações a dar aos diferentes art
 ### Tabela de acrónimos:
 
 | Acrónimo | Descrição |
-|---|---|---|---|
+|---|---|
 | GP | Gestão de Projeto |
 | GC | Gestor de Cliente |
 | REQ | Departamento de Requisitos |
