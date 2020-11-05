@@ -6,7 +6,7 @@
 
 | Versão | Data | Autor(es) | Descrição |
 |---|---|---|---|
-| 0.1 | 15/10 | Caio | Criação do documento |
+| 0.1 | 15/10 | Caio Walter | Criação do documento |
 
 </br>
 

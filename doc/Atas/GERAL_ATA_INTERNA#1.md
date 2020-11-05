@@ -17,7 +17,7 @@
 * Alexandre Brito
 * Aline Küster
 * Artur Coutinho
-* Caio Wanderley
+* Caio Walter
 * Luiza Almeida
 * Martinho Santos
 * Sara Inácio

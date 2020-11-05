@@ -1,6 +1,6 @@
-**DOC ID:** TEMPLATE_PROCESSOS
+**DOC ID:** TEMP_PROCESSOS
 
-Este template serve como modelo para a redação dos processos das equipas, devendo ser seguido o respetivo processo de criação de processos
+Este template serve como modelo para a redação dos processos das equipas, devendo ser seguido o respetivo processo de criação de processos.
 
 ### **Tabela de Versões**
 

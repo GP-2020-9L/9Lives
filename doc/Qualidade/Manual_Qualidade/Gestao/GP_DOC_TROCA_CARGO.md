@@ -22,6 +22,6 @@ Gestor de projeto
 
 | Data da mudança | Nome | Cargo anterior | Cargo atual | Razão
 |---|---|---|---|---|
-|  |  |  |  ||
+| 16/10 | Alexandre Brito | Lider de Implementação | Membro de Qualidade | Não existe documento de requisitos para começar a implementação |
 
 </br>

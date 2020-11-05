@@ -5,20 +5,21 @@ A equipa de Qualidade é a responsável pelo gerenciamento e verificação que o
 
 | Unidade | Data | Lead
 |---|---|---
-| QUA | 22/10 | Ana Sofia
+| QUA | 22/10 | Ana Lebreiro
 
 ### **Tabela de Versões**
 
 | Versão | Data | Autor(es) | Descrição
 |---|---|---|---
 | 0.1 | 22/10 | Caio Walter | Rascunho Inicial
+| 0.2 | 05/11 | Alexandre Brito | Renaming
 
 ### **Membros**
 
-| Nome | Curso | E-mail 
+| Nome | Curso | E-mail
 |---|---|---
 | Caio Walter | MEI | cwwander@student.dei.uc.pt
-| Ana Sofia | MEI | sofialebreiro@student.dei.uc.pt
+| Ana Lebreiro | MEI | sofialebreiro@student.dei.uc.pt
 | Alexandre Brito | MEI | adbrito@student.dei.uc.pt
 </br>
 

@@ -1,14 +1,21 @@
-# TEMPLATE PARA REDEGIR A ATA DE REUNIÃO COM CLIENTE
+**DOC ID:** TEMP_ATA_CLIENTE
 
-### TABELA DE VERSÕES
+Este template serve como modelo para a redação das atas de reuniões com o cliente.
 
-|**Versão**|**Autor**|**Data**|**Notas**
+### **Tabela de Versões**
+
+| Versão | Data | Autor(es) | Descrição
 |---|---|---|---
 |0.1|Sofia Lebreiro|08/10|Versão inicial
 |0.2|Alexandre Brito|15/10|Conversão para markdown
 |0.3|Alexandre Brito|15/10|Adição de tabela de revisões e mudança do título segundo processo
+|0.4|Alexandre Brito|05/11|Revision to comply with new template standards
 
-<início do template>
+{Início do template - Remover tudo acima do próximo "/br"}
+
+---
+
+</br>
 
 # Ata de reunião com exploratório
 

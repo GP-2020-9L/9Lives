@@ -6,7 +6,7 @@
 
 | Versão | Data | Autor(es) | Descrição |
 |---|---|---|---|
-| 0.1 | 15/10 | Ana Lebreiro, Caio | Criação do documento |
+| 0.1 | 15/10 | Ana Lebreiro, Caio Walter | Criação do documento |
 
 </br>
 
