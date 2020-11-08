@@ -6,9 +6,9 @@
 
 | Versão | Data | Autor(es) | Descrição |
 |---|---|---|---|
-| 0.1 | 22/10 | Alexandre Brito | Criação do documento |
+| 0.1 | 22/10 | Alexandre Brito | Criação do documento. |
 | 0.2 | 22/10 | Alexandre Brito | Alterações no output e adicionada diretriz 10. |
-| 0.3 | 08/11 | Caio Walter | Revisão do Documento |
+| 0.3 | 08/11 | Caio Walter | Revisão do Documento. |
 </br>
 
 ### **Descrição do Processo**
@@ -43,7 +43,7 @@ Este processo é ativado sempre que um membro necessita de adicionar um artefact
 1. Aceder ao repostório [9Lives](https://github.com/GP-2020-9L/9Lives)
 2. Navegar até à pasta previamente indicada no Slack
 3. Selecionar a opção Add file -> Upload file
-4. Arrastar o artefacto para a área indicada ou escolher o mesmo através da janela para este efeito.
+4. Arrastar o artefacto para a área indicada ou escolher o mesmo através da janela para este efeito
 5. Inserir uma descrição suscinta do artefacto a ser inserido no campo com texto "Add files via upload"
 6. Selecionar a segunda opção "Create a new branch for this commit and start a pull request"
 7. Mudar o nome do branch para ser igual ao nome do artefacto a ser adicionado
@@ -51,7 +51,7 @@ Este processo é ativado sempre que um membro necessita de adicionar um artefact
 9. Na nova página premir "Create pull request"
 10. Aguardar revisão do Pull request
     1. Em caso de ser aceite o processo termina
-    2. Em caso de ser necessário alguma alteração esta será mencionada no pull request. 
+    2. Em caso de ser necessário alguma alteração esta será mencionada no pull request
        1. Após feita a alteração necessária o processo volta ao passo 10.
 
 
@@ -69,12 +69,12 @@ Novo documento adicionado ao repositório.
 
 ---
 
-Aceitação do pull request
+Aceitação do pull request.
 
 </br>
 
 ### **Aprovação e Validação**
 
-Qualquer elemento capaz de aceitar pull requests
+Qualquer elemento capaz de aceitar pull requests.
 
 
