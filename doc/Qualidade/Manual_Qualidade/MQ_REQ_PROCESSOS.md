@@ -1,6 +1,6 @@
 **DOC ID:** REQ
 
-A equipa de Requisitos responsabiliza-se pela recolha e elaboração dos requisitos utilizados para a elaboração do produto e pelo design inicial (mockups) a mostrar ao cliente. Todos estes pontos servirão para a elaboração do Documento de Requisitos, no qual constarão também todas as tabelas com os casos de uso e os requisitos.  
+O Departamento de Requisitos responsabiliza-se pela recolha e elaboração dos requisitos utilizados para a elaboração do produto e pelo design inicial (mockups) a mostrar ao cliente. Todos estes pontos servirão para a elaboração do Documento de Requisitos, no qual constarão também todas as tabelas com os casos de uso e os requisitos.  
 
 | Unidade | Data | Lead
 |---|---|---

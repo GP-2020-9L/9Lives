@@ -40,15 +40,15 @@ Necessidade de criar um artefacto.
 
 ---
 
-1. Criar o documento designando o nome do artefacto de acordo com a norma existente no manual de qualidade
-2. Escolher o template adequado existente no manual de qualidade
-3. Criar o artefacto com a informação a registar de acordo com o template
-4. Colocar o documento no slack no canal #validação
-5. Pedir aprovação ao departamento de Qualidade
+1. Criar o documento designando o nome do artefacto de acordo com a norma existente no manual de qualidade.
+2. Escolher o template adequado existente no manual de qualidade.
+3. Criar o artefacto com a informação a registar de acordo com o template.
+4. Colocar o documento no slack no canal #validação.
+5. Pedir aprovação ao departamento de Qualidade.
 6. Revisão formal:
    1. Aprovado: O revisor terá de registar a sua aprovação no campo indicado e o autor coloca o documento no git na pasta indicada
    2. Recusado: Existem ainda informações a corrigir, e neste caso o revisor deverá assinalar quais as modificações pretendidas
-7. Após aprovado o artefacto estará completo e será arquivado no repositório da equipa
+7. Após aprovado o artefacto estará completo e será arquivado no repositório da equipa.
 
 
 </br>

@@ -7,6 +7,7 @@
 | Versão | Data | Autor(es) | Descrição |
 |---|---|---|---|
 | 0.1 | 21/10 | Ana Lebreiro | Criação do documento |
+| 0.2 | 08/11 | Caio Walter | Revisão do Documento |
 
 </br>
 
@@ -39,18 +40,18 @@ Algum elemento da equipa seja infetado
 
 ---
 
-Para evitar que a equipa seja infetada todos os contactos dos elementos serão realizados a partir das normas fornecidas pela DGS. Reuniões preferencialmente via zoom, máscara obrigatória distância de segurança presencialmente.
+Para evitar que a equipa seja infetada todos os contactos dos elementos serão realizados a partir das normas fornecidas pela DGS. Reunião preferencialmente via zoom, máscara obrigatória distância de segurança presencialmente.
 
 1. Contactar imediatamente os elementos da equipa no canal geral do Slack.
 2. O gestor de projeto terá que contactar o professor da Unidade Curricular de imediato por email.
-3. Elemento infetado com sintomas
+3. Elemento infetado com sintomas.
    1. O gestor de projeto e o líder do departamento do elemento devem redefinir a gestão das tarefas, uma vez que esse elemento se encontra incapacitado de trabalhar.
    2. As reuniões irão ser realizadas inteiramente por Zoom
    3. Se o elemento for líder, redefinir cargo usando o processo de troca de cargo
-4. Elemento infetado sem sintomas
+4. Elemento infetado sem sintomas.
    1. O gestor de projeto e o líder do departamento do elemento devem redefinir a gestão das tarefas, e diminuir as tarefas desse elemento.
    2. As reuniões irão ser realizadas inteiramente por Zoom
-5. Confinamento obrigatório
+5. Confinamento obrigatório.
    1. As reuniões irão ser realizadas inteiramente por Zoom
    2. Definir um acordo entre a equipa e o cliente para que alguns elementos visitem as instalações em segurança para implementar o projeto
 
@@ -68,4 +69,4 @@ Para evitar que a equipa seja infetada todos os contactos dos elementos serão r
 
 ---
 
-O processo acaba quando o(s) elementos saírem da quarentena
+O processo acaba quando o(s) elementos saírem da quarentena.

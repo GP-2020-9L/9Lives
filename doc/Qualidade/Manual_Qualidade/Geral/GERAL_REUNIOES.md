@@ -7,6 +7,7 @@
 | Versão | Data | Autor(es) | Descrição |
 |---|---|---|---|
 | 0.1 | 15/10 | Ana Lebreiro | Criação do documento |
+| 0.2 | 08/11 | Caio Walter | Revisão do Documento |
 
 </br>
 
@@ -45,7 +46,7 @@ Este processo é sempre ativado quando existe a necessidade de determinados memb
 4. Quem é o secretário:
    1. Se a reunião for com o cliente – Gestor de Cliente (caso falte um elemento do departamento de requisitos)
    2. Se a reunião for interna a um departamento – Vice-Coordenador (caso falte um outro elemento)
-   3. Se a reunião for de Líderes – se a gestora de projeto estiver na reunião, senão o coordenador de qualidade.
+   3. Se a reunião for de Líderes – se a gestora de projeto estiver na reunião, senão o coordenador de qualidade
 5. Cumprir o ciclo dos artefactos definidos no manual de qualidade.
 
 </br>
@@ -54,8 +55,8 @@ Este processo é sempre ativado quando existe a necessidade de determinados memb
 
 ---
 
-- Ata da reunião que deve ser redigida até 24h após a reunião.
-- As decisões tomadas na reunião devem ser partilhadas no canal do Slack para que os membros que não estiveram presentes sejam atualizados e possam opinar.
+- Ata da reunião que deve ser redigida até 24h após a reunião
+- As decisões tomadas na reunião devem ser partilhadas no canal do Slack para que os membros que não estiveram presentes sejam atualizados e possam opinar
 
 </br>
 

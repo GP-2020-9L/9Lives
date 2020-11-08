@@ -14,7 +14,7 @@ Neste ficheiro dererão ficar indicadas todas as mudanças de troca de cargo exi
 
 ---
 
-Gestor de projeto
+Gestor de projeto.
 
 </br>
 

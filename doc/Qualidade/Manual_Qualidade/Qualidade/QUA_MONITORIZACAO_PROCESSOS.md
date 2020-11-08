@@ -8,6 +8,8 @@
 |---|---|---|---
 | 0.1 | 22/10 | Caio Walter | Criação do documento
 | 0.2 | 22/10 | Sofia Lebreiro | Revisão do Processo
+| 0.3 | 08/11 | Caio Walter | Revisão do Documento |
+
 
 </br>
 
@@ -23,7 +25,7 @@ Este processo consiste na monotorização das atividades da equipa de acordo com
 
 ---
 
-Unidade de Qualidade
+Departamento de Qualidade
 
 </br>
 
@@ -41,7 +43,7 @@ Unidade de Qualidade
 
 ---
 
-Artefacto a avaliar
+Artefacto a avaliar.
 
 </br>
 
@@ -49,12 +51,11 @@ Artefacto a avaliar
 ### **Diretrizes**
 
 ---
-- Validação dos artefactos de acordo com as regras impostas para o respectivo processo através do Manual de Qualidade e dos
-templates disponíveis (averiguação de procedimentos);
-- Análise dos dados e estatisticas recolhidos através dos métodos de recolha de métricas, de modo a percerber os comportamentos e desempenhos da equipa, com o objetivo de entender o momento da equipa e as causas do momento;
-- O team-lead de Qualidade é responsável por notificar o team-lead da unidade em causa de modo a notificar toda a equipa quando algo não está dentro dos parâmetros definidos e perceber o que está errado;
-- Possíveis revisões do Manual de Qualidade, ao nível de processos, após um parecer do team-lead de Qualidade e da unidade em questão;
-- Possível revisão de artefactos por parte das unidades, depois de um parecer do team-lead de Qualidade e da unidade em questão.
+- Validação dos artefactos de acordo com as regras impostas para o respectivo processo através do Manual de Qualidade e dos templates disponíveis (averiguação de procedimentos)
+- Análise dos dados e estatísticas recolhidos através dos métodos de recolha de métricas, de modo a perceber os comportamentos e desempenhos da equipa, com o objetivo de entender o momento da equipa e as causas do momento
+- O líder de Qualidade é responsável por notificar o líder do departamento em causa de modo a notificar toda a equipa quando algo não está dentro dos parâmetros definidos e perceber o que está errado
+- Possíveis revisões do Manual de Qualidade, ao nível de processos, após um parecer do líder de Qualidade e do departamento em questão
+- Possível revisão de artefactos por parte dos departamentos, depois de um parecer do líder de Qualidade e do departamento em questão
 
 </br>
 
@@ -62,8 +63,8 @@ templates disponíveis (averiguação de procedimentos);
 
 ---
 
-- Métricas recolhidas, analisadas, interpretadas e incluídas na apresentação semanal;
-- Possíveis pareceres, referidos na descrição de tarefas.
+- Métricas recolhidas, analisadas, interpretadas e incluídas na apresentação semanal
+- Possíveis pareceres, referidos na descrição de tarefas
 
 </br>
 
@@ -71,7 +72,7 @@ templates disponíveis (averiguação de procedimentos);
 
 ---
 
-Artefacto Avaliado
+Artefacto Avaliado.
 
 </br>
 
@@ -79,4 +80,4 @@ Artefacto Avaliado
 
 ---
 
-Qualquer membro da Equipa de Qualidade está apto de validar processos e analise das métricas. 
+Qualquer membro do Departamento de Qualidade está apto de validar processos e analise das métricas. 

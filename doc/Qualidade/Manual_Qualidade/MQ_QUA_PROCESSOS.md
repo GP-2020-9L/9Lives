@@ -1,6 +1,6 @@
 **DOC ID:** QUA
 
-A equipa de Qualidade é a responsável pelo gerenciamento e verificação que os processos estão a ser seguidos pela equipa inteira de modo a garantir uma presença mínima de defeitos no produto. Também é responsabilidade a elaboração e manutenção do Manual de Qualidade, a apuração e análise de métricas relativamente ao produto.  
+O Departamento de Qualidade é a responsável pelo gerenciamento e verificação que os processos estão a ser seguidos pela equipa inteira de modo a garantir uma presença mínima de defeitos no produto. Também é responsabilidade a elaboração e manutenção do Manual de Qualidade, a apuração e análise de métricas relativamente ao produto.  
 
 
 | Unidade | Data | Lead
@@ -13,6 +13,7 @@ A equipa de Qualidade é a responsável pelo gerenciamento e verificação que o
 |---|---|---|---
 | 0.1 | 22/10 | Caio Walter | Rascunho Inicial
 | 0.2 | 05/11 | Alexandre Brito | Renaming
+| 0.3 | 08/11 | Caio Walter | Revisão do Documento |
 
 ### **Membros**
 
@@ -24,10 +25,10 @@ A equipa de Qualidade é a responsável pelo gerenciamento e verificação que o
 </br>
 
 ### **Objetivos**
-- Criação e manutenção do manual de qualidade;
-- Verificação de documentação conforme processos em prática na equipa;
-- Monitorização dos processos gerais da equipa;
-- Criação de Templates;
+- Criação e manutenção do manual de qualidade
+- Verificação de documentação conforme processos em prática na equipa
+- Monitorização dos processos gerais da equipa
+- Criação de Templates
 </br>
 
 ### **Processos**

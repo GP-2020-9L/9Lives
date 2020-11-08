@@ -7,6 +7,7 @@
 | Versão | Data | Autor(es) | Descrição |
 |---|---|---|---|
 | 0.1 | 15/10 | Caio Walter | Criação do documento |
+| 0.2 | 08/11 | Caio Walter | Revisão do Documento |
 
 </br>
 
