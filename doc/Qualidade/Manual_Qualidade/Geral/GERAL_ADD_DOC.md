@@ -6,9 +6,9 @@
 
 | Versão | Data | Autor(es) | Descrição |
 |---|---|---|---|
-| 0.1 | 22/10 | Alexandre Brito | Criação do documento. |
-| 0.2 | 22/10 | Alexandre Brito | Alterações no output e adicionada diretriz 10. |
-| 0.3 | 08/11 | Caio Walter | Revisão do Documento. |
+| 0.1 | 22/10 | Alexandre Brito | Criação do documento |
+| 0.2 | 22/10 | Alexandre Brito | Alterações no output e adicionada diretriz 10 |
+| 0.3 | 08/11 | Caio Walter | Revisão do Documento |
 </br>
 
 ### **Descrição do Processo**
