@@ -24,7 +24,8 @@ Este processo define como é que deve ser realizada a delegação de tarefas e q
 
 ---
 
-Gestor de projeto ou Líderes dos departamentos.
+-Gestor de projeto 
+-Líderes dos departamentos.
 
 </br>
 
