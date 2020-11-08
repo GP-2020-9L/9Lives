@@ -8,7 +8,7 @@
 |---|---|---|---|
 | 0.1 | 15/10 | Ana Lebreiro | Criação do documento |
 | 0.2 | 22/10 | Alexandre Brito | Changed the channel to place documents in need of validation |
-| 0.3 | 08/11 | Caio Walter | Revisão do Documento. |
+| 0.3 | 08/11 | Caio Walter | Revisão do Documento |
 </br>
 
 ### **Descrição do Processo**
