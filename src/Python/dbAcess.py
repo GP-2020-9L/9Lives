@@ -7,7 +7,6 @@ class dbAccess():
   def __init__(self, conn):
     
     params = __config(self)
-    
     conn = psycopg2.connect(**params)
     
     
@@ -53,7 +52,7 @@ class dbAccess():
       cur.execute("""SELECT max(energyAvg)
                     from bike;""")
       
-      highScore = cur.fetchone();
+      highScore = cur.fetchone()
       
       if(rideEnergyAvg > highScore):
         isHighestScore = True
@@ -61,8 +60,8 @@ class dbAccess():
     except (Exception, psycopg2.DatabaseError) as error:
         print(error)
     finally:
-        if conn is not None:
-            conn.close()
+        if self.conn is not None:
+            self.conn.close()
 
     return isHighestScore
   
