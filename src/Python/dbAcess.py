@@ -1,3 +1,4 @@
+
 import psycopg2
 import configparser
 import pathlib
@@ -12,6 +13,7 @@ class dbAccess():
     params = self.__config()
     self.conn = psycopg2.connect(**params)
     self.logger.info("dbAccess -> Connection to postgres established")
+    self.NoneType = type(None)
     
     
   def __config(self, filename='/Database/database.ini', section='postgresql'):
@@ -55,6 +57,7 @@ class dbAccess():
       self.logger.info('dbAccess - insertNewRide -> Insertion completed')
     except (Exception, psycopg2.DatabaseError) as error:
       self.logger.critical('dbAccess - insertNewRide -> {0}'.format(error))
+      raise
 
   def isNewHighScore(self, rideEnergyAvg):
     isHighestScore = False
@@ -70,12 +73,8 @@ class dbAccess():
         isHighestScore = True
       cur.close()
     except (Exception, psycopg2.DatabaseError) as error:
-        print(error, " - 1")
-    finally:
-        if self.conn is not None:
-            self.conn.close()
-
-    return isHighestScore
+      print(error.with_traceback())
+      raise
   
   def getBestScore(self):
     try:
@@ -86,10 +85,10 @@ class dbAccess():
       
       bestScore = cur.fetchone()
       cur.close()
-      return bestScore if type(bestScore) is None else [0]
+      return bestScore[0] if type(bestScore[0]) is not self.NoneType else 0
     except (Exception, psycopg2.DatabaseError) as error:
-        print(error)
-    return 0
+      print(error.with_traceback())
+      raise
   
   def getEnergyDay(self):
     try:
@@ -100,10 +99,10 @@ class dbAccess():
                     where date(date) = CURRENT_DATE;""")
       energyDay = cur.fetchone()
       cur.close()
-      return energyDay if type(energyDay) is None else [0] 
+      return energyDay[0] if type(energyDay[0]) is not self.NoneType else 0
     except (Exception, psycopg2.DatabaseError) as error:
-        print(error)
-    return 0
+      print(error.with_traceback())
+      raise
   
   def getEnergyMonth(self):
     try:
@@ -115,8 +114,8 @@ class dbAccess():
       
       energyMonth = cur.fetchone()
       cur.close()
-      return energyMonth if type(energyMonth) is None else [0]
+      return energyMonth[0] if type(energyMonth[0]) is not self.NoneType else 0
     except (Exception, psycopg2.DatabaseError) as error:
-        print(error)
-    return 0
+      print(error.with_traceback())
+      raise  
     

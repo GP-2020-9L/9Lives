@@ -32,11 +32,13 @@ class displayClass(QMainWindow):
         
     def __startThread(self):
       self.dataThread = dataThread()
-      self.dataThread.beginActivity.connect(self.startActivity)
-      self.dataThread.updateReadings.connect(self.updateActivityRead)
-      self.dataThread.processResults.connect(self.setTransitionScreen)
+      print(1)
+      self.dataThread.startActivity.connect(self.startActivity)
+      self.dataThread.updateActivityRead.connect(self.updateActivityRead)
       self.dataThread.endActivity.connect(self.endActivity)
-      self.dataThread.resetActivity.connect(self.setIdleScreen)
+      self.dataThread.scoreActivity.connect(self.scoreActivity)
+      self.dataThread.idleScreen.connect(self.setIdleScreen)
+      self.dataThread.errorScreen.connect(self.setErrorScreen)
       self.dataThread.start()
 
     def closeEvent(self, event):
@@ -52,38 +54,21 @@ class displayClass(QMainWindow):
         if event.key() == Qt.Key_Escape:
             self.closeEvent(event=event)  # Close application from escape key.  
         if event.key() == Qt.Key_1:
-            self.setIdleScreen([0,0,0])
+            self.setWindowTitle("Idle Screen")
+            self.widgetStack.setCurrentWidget(self.idleScreen)
+            self.idleScreen.updateText(100, 200, 300)
         if event.key() == Qt.Key_2:
-            self.setActivityScreen()
+            self.setWindowTitle("Activity Screen")
+            self.widgetStack.setCurrentWidget(self.activityScreen)
         if event.key() == Qt.Key_3:
-            self.setTransitionScreen([2000])
+            self.setWindowTitle("Transition Screen")  
+            self.widgetStack.setCurrentWidget(self.transitionScreen)
+            self.transitionScreen.startAnimation(2000)
         if event.key() == Qt.Key_4:
-            self.setResultsScreen()
+            self.setWindowTitle("Results Screen")
+            self.widgetStack.setCurrentWidget(self.resultsScreen)
         if event.key() == Qt.Key_5:
             self.transitionScreen.startAnimation()
-        if event.key() == Qt.Key_0:
-            self.idleScreen.updateText(10,20,30)
-            
-    def setIdleScreen(self, data):
-      if(not self.inActivity):
-        self.setWindowTitle("Idle Screen")
-        self.widgetStack.setCurrentWidget(self.idleScreen)
-        bestScore = data[0]
-        energyDay = data[1]
-        energyMonth = data[2]
-        self.idleScreen.updateText(energyDay, energyMonth, bestScore)
-      # self.show()
-      
-    def setActivityScreen(self):
-      self.setWindowTitle("Activity Screen")
-      self.widgetStack.setCurrentWidget(self.activityScreen)
-      self.inActivity = True
-      
-    def setTransitionScreen(self, time):
-      self.setWindowTitle("Transition Screen")
-      self.widgetStack.setCurrentWidget(self.transitionScreen)
-      self.transitionScreen.startAnimation(time[0])
-      self.inActivity = False
       
     def setResultsScreen(self):
       self.setWindowTitle("Results Screen")
@@ -93,34 +78,69 @@ class displayClass(QMainWindow):
       self.setActivityScreen()
       self.updateActivityRead(data)
       
+    def setActivityScreen(self):
+      self.setWindowTitle("Activity Screen")
+      self.widgetStack.setCurrentWidget(self.activityScreen)
+      self.inActivity = True
+      
     def updateActivityRead(self, data): #? curEnergy, energyPeak
-      curEnergy = round(float(data[0]),2)
-      energyPeak = round(float(data[1]),2)
+      curEnergy = round(float(data.get("curEnergy")),2)
+      energyPeak = round(float(data.get("energyPeak")),2)
       self.activityScreen.updateText(curEnergy, energyPeak)
       
+    def endActivity(self, time):
+      self.setWindowTitle("Transition Screen")
+      self.widgetStack.setCurrentWidget(self.transitionScreen)
+      self.transitionScreen.startAnimation(time)
+      self.inActivity = False
       
-    def endActivity(self, data): #? score, bestScore, energyDay, energyMonth, distance
-      score = data[0]
-      bestScore = data[1]
-      energyDay = data[2]
-      energyMonth = data[3]
-      distance = data[4]
+    def scoreActivity(self, activityResults): #? userScore, highScore, energyDay, energyMonth, distance, phonecharge, similarScore, isNewHighScore
+      userScore = activityResults.get("userScore")
+      highScore = activityResults.get("highScore")
+      energyDay = activityResults.get("energyDay")
+      energyMonth = activityResults.get("energyMonth")
+      distance = activityResults.get("distance")
+      phoneCharge = activityResults.get("phoneCharge")
+      similarScore = activityResults.get("similarScore")
+      isNewHighScore = activityResults.get("isNewHighScore")
       self.setWindowTitle("Results Screen")
+      if(isNewHighScore):
+        self.resultsScreen.setUpdatedBg()
+      else:
+        self.resultsScreen.setStandardBg()
       self.widgetStack.setCurrentWidget(self.resultsScreen)
-      self.resultsScreen.updateText(score, bestScore, energyDay, energyMonth, distance)
-    
+      self.resultsScreen.updateText(userScore, highScore, energyDay, energyMonth, distance, phoneCharge, similarScore)
       
+    def setIdleScreen(self, idleScreenData):
+      if(not self.inActivity):
+        highScore = idleScreenData.get("highScore")
+        energyDay = idleScreenData.get("energyDay")
+        energyMonth = idleScreenData.get("energyMonth")
+        self.setWindowTitle("Idle Screen")
+        self.widgetStack.setCurrentWidget(self.idleScreen)
+        self.idleScreen.updateText(energyDay, energyMonth, highScore)
+        
+    def setErrorScreen(self, idleScreenData):
+      highScore = idleScreenData.get("highScore")
+      energyDay = idleScreenData.get("energyDay")
+      energyMonth = idleScreenData.get("energyMonth")
+      self.setWindowTitle("Idle Screen Error")
+      self.idleScreen.errorScreen()
+      self.widgetStack.setCurrentWidget(self.idleScreen)
+      self.idleScreen.updateText(energyDay, energyMonth, highScore)
 class idleScreen(QWidget):
   def __init__(self, parent=None):
     super(idleScreen, self).__init__(parent)
     self.setAutoFillBackground(True)
-    self.wWidth = 1280#qApp.primaryScreen().size().width()/2
-    self.wHeight = 1024#qApp.primaryScreen().size().height()
+    self.wWidth = 1280
+    self.wHeight = 1024
     self.setGeometry(0,0,self.wWidth,self.wHeight)
     
     self.resize(self.wWidth, self.wHeight)
     bgImage = QImage("{0}/img/1_repouso.png".format(pathlib.Path(__file__).parent.absolute()))
     bgImage = bgImage.scaled(self.wWidth, self.wHeight)
+    self.bgImageError = QImage("{0}/img/6_manutencao.png".format(pathlib.Path(__file__).parent.absolute()))
+    self.bgImageError = self.bgImageError.scaled(self.wWidth, self.wHeight)
     self.customPalette = QPalette()
     self.customPalette.setBrush(QPalette.Window, QBrush(bgImage))                        
     self.setPalette(self.customPalette)
@@ -128,43 +148,48 @@ class idleScreen(QWidget):
     self.__setText()
     
   def __setText(self):
-    self.enDayLabel = QLabel("1", self)
-    self.enMonthLabel = QLabel("2", self)
-    self.bestScrLabel = QLabel("3", self)
+    self.enDayLabel = QLabel("100", self)
+    self.enMonthLabel = QLabel("200", self)
+    self.highScoreLabel = QLabel("300", self)
     self.enDayLabel.setFixedSize(int(self.wWidth/8), int(self.wHeight/19.6))
     self.enMonthLabel.setFixedSize(int(self.wWidth/8), int(self.wHeight/19.6))
-    self.bestScrLabel.setFixedSize(int(self.wWidth/8), int(self.wHeight/17.1))
+    self.highScoreLabel.setFixedSize(int(self.wWidth/5.5), int(self.wHeight/16.1))
 
     font = QFont("Praktika Rounded Bold")
     font.setBold(True)
-    font.setPointSize(40)
+    font.setPointSize(45)
     self.enDayLabel.setFont(font)
+    font.setPointSize(45)
     self.enMonthLabel.setFont(font)
-    font.setPointSize(50)
-    self.bestScrLabel.setFont(font)
+    font.setPointSize(59)
+    self.highScoreLabel.setFont(font)
     
-    self.enDayLabel.setStyleSheet("background-color: lightgreen")
-    self.enMonthLabel.setStyleSheet("background-color: lightgreen")
-    self.bestScrLabel.setStyleSheet("background-color: lightgreen")
+    self.enDayLabel.setStyleSheet("background-color: transparent")
+    self.enMonthLabel.setStyleSheet("background-color: transparent")
+    self.highScoreLabel.setStyleSheet("background-color: transparent")
     self.enDayLabel.setAlignment(Qt.AlignRight)
     self.enMonthLabel.setAlignment(Qt.AlignRight)
-    self.bestScrLabel.setAlignment(Qt.AlignRight)
+    self.highScoreLabel.setAlignment(Qt.AlignRight)
     
-    self.enDayLabel.move(836,239)
-    self.enMonthLabel.move(1062,239)
-    self.bestScrLabel.move(970,875)
+    self.enDayLabel.move(828,230)
+    self.enMonthLabel.move(1054,230)
+    self.highScoreLabel.move(889,865)
   
-  def updateText(self, energyDay, energyMonth, bestScore):
+  def updateText(self, energyDay, energyMonth, highScore):
     self.enDayLabel.setText("{0}".format(energyDay))
     self.enMonthLabel.setText("{0}".format(energyMonth))
-    self.bestScrLabel.setText("{0}".format(bestScore))
+    self.highScoreLabel.setText("{0}".format(highScore))
+
+  def errorScreen(self):
+    self.customPalette.setBrush(QPalette.Window, QBrush(self.bgImageError))                        
+    self.setPalette(self.customPalette)
     
 class activityScreen(QWidget):
   def __init__(self, parent=None):
     super(activityScreen, self).__init__(parent)
     self.setAutoFillBackground(True)
-    self.wWidth = 1280#qApp.primaryScreen().size().width()/2
-    self.wHeight = 1024#qApp.primaryScreen().size().height()
+    self.wWidth = 1280
+    self.wHeight = 1024
     self.setGeometry(0,0,self.wWidth,self.wHeight)
     
     self.resize(self.wWidth, self.wHeight)
@@ -177,26 +202,26 @@ class activityScreen(QWidget):
     self.__setText()
     
   def __setText(self):
-    self.curEnergy = QLabel("1", self)
-    self.bestEnergy = QLabel("2", self)
+    self.curEnergy = QLabel("100", self)
+    self.bestEnergy = QLabel("200", self)
 
-    self.curEnergy.setFixedSize(int(self.wWidth/8), int(self.wHeight/21.6))    #[250,50]
-    self.bestEnergy.setFixedSize(int(self.wWidth/8), int(self.wHeight/19.6))   #[250,50]
+    self.curEnergy.setFixedSize(int(self.wWidth/8), int(self.wHeight/16.6))    #[250,50]
+    self.bestEnergy.setFixedSize(int(self.wWidth/6), int(self.wHeight/13.1))   #[250,50]
 
     font = QFont("Praktika Rounded Bold")
     font.setBold(True)
-    font.setPointSize(40)
+    font.setPointSize(59)
     self.curEnergy.setFont(font)
-    font.setPointSize(50)
+    font.setPointSize(74)
     self.bestEnergy.setFont(font)
     
-    self.curEnergy.setStyleSheet("background-color: lightgreen")
-    self.bestEnergy.setStyleSheet("background-color: lightgreen")
+    self.curEnergy.setStyleSheet("background-color: transparent")
+    self.bestEnergy.setStyleSheet("background-color: transparent")
     self.curEnergy.setAlignment(Qt.AlignRight)
     self.bestEnergy.setAlignment(Qt.AlignRight)
     
-    self.curEnergy.move(726,469)
-    self.bestEnergy.move(208,922)
+    self.curEnergy.move(711,449)
+    self.bestEnergy.move(143,898)
   
   def updateText(self, curEnergy, bestScore):
     self.curEnergy.setText("{0}".format(curEnergy))
@@ -206,8 +231,8 @@ class transitionScreen(QWidget):
   def __init__(self, parent=None):
     super(transitionScreen, self).__init__(parent)
     self.setAutoFillBackground(True)
-    width = 1280#qApp.primaryScreen().size().width()/2
-    height = 1024#qApp.primaryScreen().size().height()
+    width = 1280
+    height = 1024
     
     self.resize(width, height)
     bgImage = QImage("{0}/img/3_transicao.png".format(pathlib.Path(__file__).parent.absolute()))
@@ -241,82 +266,95 @@ class transitionScreen(QWidget):
     self.anim.setDuration(time)
     self.anim.start()
     pass
-    
 
 class resultsScreen(QWidget):
   def __init__(self, parent=None):
     super(resultsScreen, self).__init__(parent)
     self.setAutoFillBackground(True)
-    self.wWidth = 1280#qApp.primaryScreen().size().width()/2
-    self.wHeight = 1024#qApp.primaryScreen().size().height()
+    self.wWidth = 1280
+    self.wHeight = 1024
     self.setGeometry(0,0,self.wWidth,self.wHeight)
     
     self.resize(self.wWidth, self.wHeight)
-    self.bgImage = QImage("{0}/img/5_sem_update_pont.png".format(pathlib.Path(__file__).parent.absolute()))
+    self.bgImageStandard = QImage("{0}/img/5_sem_update_pont.png".format(pathlib.Path(__file__).parent.absolute()))
     self.bgImageUpdate = QImage("{0}/img/4_update_pont.png".format(pathlib.Path(__file__).parent.absolute()))
-    self.bgImage = self.bgImage.scaled(self.wWidth, self.wHeight)
+    self.bgImageStandard = self.bgImageStandard.scaled(self.wWidth, self.wHeight)
+    self.bgImageUpdate = self.bgImageUpdate.scaled(self.wWidth, self.wHeight)
     self.customPalette = QPalette()
-    self.customPalette.setBrush(QPalette.Window, QBrush(self.bgImage))                        
+    self.customPalette.setBrush(QPalette.Window, QBrush(self.bgImageStandard))                        
     self.setPalette(self.customPalette)
     
     self.__setText()
     
   def __setText(self):
-    self.scoreLabel = QLabel("1", self)
-    self.bestScrLabel = QLabel("2", self)
-    self.enDayLabel = QLabel("3", self )
-    self.enMonthLabel = QLabel("4", self)
-    self.distanceLabel = QLabel("5", self)
-    self.percUsers = QLabel("6", self)
-    self.percBattery = QLabel("7", self)
+    self.userScoreLabel = QLabel("100", self)
+    self.highScoreLabel = QLabel("200", self)
+    self.enDayLabel = QLabel("3000", self )
+    self.enMonthLabel = QLabel("4000", self)
+    self.distanceLabel = QLabel("5000", self)
+    self.percUsers = QLabel("600", self)
+    self.percBattery = QLabel("700", self)
 
-    self.scoreLabel.setFixedSize(int(self.wWidth/8), int(self.wHeight/21.6))    #[250,50]
-    self.bestScrLabel.setFixedSize(int(self.wWidth/8), int(self.wHeight/21.6))  #[250,50]
-    self.enDayLabel.setFixedSize(int(self.wWidth/10), int(self.wHeight/22.6))  #[250,55]
-    self.enMonthLabel.setFixedSize(int(self.wWidth/10), int(self.wHeight/22.6))  #[250,55]
-    self.distanceLabel.setFixedSize(int(self.wWidth/10), int(self.wHeight/22.6))  #[250,55]
-    self.percUsers.setFixedSize(int(self.wWidth/12), int(self.wHeight/25.6))  #[250,55]
-    self.percBattery.setFixedSize(int(self.wWidth/12), int(self.wHeight/25.6))  #[250,55]
+    self.userScoreLabel.setFixedSize(int(self.wWidth/8), int(self.wHeight/18.1))
+    self.highScoreLabel.setFixedSize(int(self.wWidth/8), int(self.wHeight/18.6))
+    self.enDayLabel.setFixedSize(int(self.wWidth/10), int(self.wHeight/22.5))
+    self.enMonthLabel.setFixedSize(int(self.wWidth/10), int(self.wHeight/22.6))
+    self.distanceLabel.setFixedSize(int(self.wWidth/10), int(self.wHeight/27.6))
+    self.percUsers.setFixedSize(int(self.wWidth/12), int(self.wHeight/34.6))
+    self.percBattery.setFixedSize(int(self.wWidth/12), int(self.wHeight/34.6))  
 
     font = QFont("Praktika Rounded Bold")
     font.setBold(True)
-    font.setPointSize(40)
-    self.scoreLabel.setFont(font)
-    self.bestScrLabel.setFont(font)
-    font.setPointSize(30)
+    font.setPointSize(53)
+    self.userScoreLabel.setFont(font)
+    self.highScoreLabel.setFont(font)
+    font.setPointSize(42)
     self.enDayLabel.setFont(font)
     self.enMonthLabel.setFont(font)
+    font.setPointSize(33)
     self.distanceLabel.setFont(font)
-    font.setPointSize(28)
+    font.setPointSize(24)
     self.percUsers.setFont(font)
     self.percBattery.setFont(font)
     
-    self.scoreLabel.setStyleSheet("background-color: lightgreen")
-    self.bestScrLabel.setStyleSheet("background-color: lightgreen")
-    self.enDayLabel.setStyleSheet("background-color: lightgreen")
-    self.enMonthLabel.setStyleSheet("background-color: lightgreen")
-    self.distanceLabel.setStyleSheet("background-color: lightgreen")
-    self.percUsers.setStyleSheet("background-color: lightgreen")
-    self.percBattery.setStyleSheet("background-color: lightgreen")
-    self.scoreLabel.setAlignment(Qt.AlignRight)
-    self.bestScrLabel.setAlignment(Qt.AlignRight)
+    self.userScoreLabel.setStyleSheet("background-color: transparent")
+    self.highScoreLabel.setStyleSheet("background-color: transparent")
+    self.enDayLabel.setStyleSheet("background-color: transparent")
+    self.enMonthLabel.setStyleSheet("background-color: transparent")
+    self.distanceLabel.setStyleSheet("background-color: transparent")
+    self.percUsers.setStyleSheet("background-color: transparent")
+    self.percBattery.setStyleSheet("background-color: transparent")
+    self.userScoreLabel.setAlignment(Qt.AlignRight)
+    self.highScoreLabel.setAlignment(Qt.AlignRight)
     self.enDayLabel.setAlignment(Qt.AlignRight)
     self.enMonthLabel.setAlignment(Qt.AlignRight)
     self.distanceLabel.setAlignment(Qt.AlignRight)
     self.percUsers.setAlignment(Qt.AlignRight)
     self.percBattery.setAlignment(Qt.AlignRight)
     
-    self.scoreLabel.move(1054,427)
-    self.bestScrLabel.move(1067,930)
-    self.enDayLabel.move(10,927)
-    self.enMonthLabel.move(220,927)
-    self.distanceLabel.move(400,942)
-    self.percUsers.move(292,490)
-    self.percBattery.move(310,730)
+    self.userScoreLabel.move(1022,417)
+    self.highScoreLabel.move(1035,920)
+    self.enDayLabel.move(-16,925)
+    self.enMonthLabel.move(194,925)
+    self.distanceLabel.move(359,948)
+    self.percUsers.move(260,497)
+    self.percBattery.move(281,739)
   
-  def updateText(self, score, bestScore, energyDay, energyMonth, distance):
-    self.scoreLabel.setText("{0}".format(score))
-    self.bestScrLabel.setText("{0}".format(bestScore))
+  def updateText(self, userScore, highScore, energyDay, energyMonth, distance, percBattery, percUsers):
+    self.userScoreLabel.setText("{0}".format(userScore))
+    self.highScoreLabel.setText("{0}".format(highScore))
     self.enDayLabel.setText("{0}".format(energyDay))
     self.enMonthLabel.setText("{0}".format(energyMonth))
     self.distanceLabel.setText("{0}".format(distance))
+    self.percBattery.setText("{0}".format(percBattery))
+    self.percUsers.setText("{0}".format(percUsers))
+    
+  def setStandardBg(self):
+    self.customPalette.setBrush(QPalette.Window, QBrush(self.bgImageStandard))        
+    self.percUsers.setVisible(True)                
+    self.setPalette(self.customPalette)
+  
+  def setUpdatedBg(self):
+    self.customPalette.setBrush(QPalette.Window, QBrush(self.bgImageUpdate))        
+    self.percUsers.setVisible(False)                
+    self.setPalette(self.customPalette)
