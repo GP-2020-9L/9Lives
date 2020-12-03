@@ -11,6 +11,8 @@ from display import *
 from dataInput import *
 from threading import Timer
 import numpy as np
+import math
+import traceback
 
 if __name__ == "__main__":
   # main()
@@ -21,7 +23,7 @@ if __name__ == "__main__":
   
   app = QApplication(argv)
   window = displayClass()
-  window.setWindowFlags(Qt.WindowCloseButtonHint | Qt.WindowType_Mask) #| Qt.FramelessWindowHint)
+  window.setWindowFlags(Qt.WindowCloseButtonHint | Qt.WindowType_Mask | Qt.FramelessWindowHint)
   # window.showFullScreen()
   window.setFixedWidth(1280)
   window.setFixedHeight(1024)
@@ -45,10 +47,16 @@ class dataThread(QThread):
     self.hasError = False
     
     self.logger = logging.getLogger('logs')
-    
-    self.database = dbAccess()
-    self.restLimit = 2 # amount of time that is possible to stop before activity is ended
-    self.readTime = 0.25
+    try:
+      self.database = dbAccess()
+    except(BaseException) as error:
+      print(error)
+      self.logger.critical('dataThread - __init__ -> {0}'.format(error))
+      self.hasError = True
+
+    self.restLimit = 2        #? Amount of time that is possible to stop before activity is ended
+    self.readInterval = 0.25      #? Intervals between each read
+    self.numGroups = 5        #? Number of groups to determine the percentage of players with similar score
     
     self.highScore = 0
     self.energyDay = 0
@@ -80,7 +88,6 @@ class dataThread(QThread):
       
       if(not self.processingData and not self.hasError):
         try:
-          
           if __debug__:
             avg = 0
             std = 0
@@ -90,7 +97,7 @@ class dataThread(QThread):
             avg, std, duration = map(int, sys.stdin.readline().strip().split())
             self.logger.debug("dataThread - simulation -> Avg({0}), Std({1}), time({2})".format(avg,std,duration))
           
-            samples = int(duration / self.readTime)
+            samples = int(duration / self.readInterval)
             activityStartTime = time.time()
             self.logger.debug("dataThread - simulation -> Starting simulation of {0} samples".format(samples))
             
@@ -103,37 +110,33 @@ class dataThread(QThread):
                 energyPeak = energyRead 
               self.updateActivityRead.emit(({"curEnergy":energyRead, "energyPeak":energyPeak}))
               self.logger.debug("dataThread - simulation -> energyRead {0} with {1} V".format(i+1,energyRead))
-              time.sleep(self.readTime)
-              
+              time.sleep(self.readInterval)
             activityStopTime = time.time()   
-          else:
+          else: # todo finish energy read from sensor
             energyRead = self.dataSource.readData()
             if (energyRead > 0):
-              # self.beginActivity.emit() #? signal ui to change to activity screen
+              self.logger.info("dataThread - sensor -> Starting activity, energy value of {0}".format(energyRead))
+              if (energyRead > energyPeak):
+                energyPeak = energyRead 
+              self.startActivity.emit({"curEnergy":energyRead, "energyPeak":energyPeak}) #? signal ui to change to activity screen
               activityStartTime = time.time()
-              if (energyRead > energyPeak): energyPeak = energyRead 
-              
-              while(energyRead > 0 or activityEndedTime > self.restLimit):
+              while(energyRead > 0 or activityEndedTime < self.restLimit):
+                self.updateActivityRead.emit(({"curEnergy":energyRead, "energyPeak":energyPeak}))
+                self.logger.info("dataThread - sensor -> energyRead of {0}".format(energyRead))
                 if (energyRead == 0):
-                  if(activityStopTime != 0):
-                    activityEndedTime = time.time() - activityStopTime
-                  else:
-                    activityStopTime = time.time()
+                  activityEndedTime = time.time() - activityStartTime
                 else:
-                  # self.updateReadings.emit()
                   generatedPower += energyRead
-                  if (energyRead > energyPeak): energyPeak = energyRead 
-                  
-                time.sleep(self.readTime)
+                  if (energyRead > energyPeak): 
+                    energyPeak = energyRead 
+                time.sleep(self.readInterval)
                 energyRead = self.dataSource.readData()
-
-              # self.endActivity.emit()
-        
+            activityStopTime = time.time()
           if(generatedPower > 0):
 
             date = datetime.now()
             duration = round(activityStopTime - activityStartTime, 1)
-            energyAvg = round(generatedPower / (duration * (1/self.readTime)), 1)
+            energyAvg = round(generatedPower / (duration * (1/self.readInterval)), 1)
             energyPeak = round(energyPeak, 1)
             
             if __debug__:
@@ -145,8 +148,6 @@ class dataThread(QThread):
             
             self.database.insertNewRide(date, energyAvg, energyPeak, duration)
             
-            # todo random number between 1500 and 3000 ms for random calc time 
-            
             self.endActivity.emit(np.random.normal(2250,200,1)[0])
             self.processingData = True
 
@@ -154,14 +155,10 @@ class dataThread(QThread):
             self.energyDay = round(self.database.getEnergyDay(),1)
             self.energyMonth = round(self.database.getEnergyMonth(),1)
             distance = 0.25 # todo kekw do this :)
-            phoneCharge = 1
-            similarScore = 10
+            phoneCharge = self.__calcBatteryCharge(energyAvg * duration)
             
-            # todo % users with similar result
-            # todo % of phone battery charged
-            # todo check if new highscore
-
-
+            increment = self.highScore / self.numGroups
+            similarScore = round(self.database.getPercUsers(math.floor(energyAvg/increment),math.ceil(energyAvg/increment)), 1)
             Timer(2, self.__endActivity, (energyAvg, self.highScore, self.energyDay, self.energyMonth, distance, phoneCharge, similarScore, isNewHighScore)).start()
             
             activityStartTime = 0
@@ -171,15 +168,18 @@ class dataThread(QThread):
             energyPeak = 0
             energyRead = 0 
         except(BaseException) as error:
-          print(error.with_traceback())
-          self.logger.critical('dataThread - mainLoop -> {0}'.format(error.with_traceback()))
+          print(error)
+          traceback.print_exc()
+          self.logger.critical('dataThread - mainLoop -> {0}'.format(error))
           self.hasError = True
-          
       else:
         self.logger.info('dataThread - mainLoop -> Sleeping for 100')
         time.sleep(100)
       time.sleep(0.1)
 
+  def __calcBatteryCharge(self, energyGenerated):
+    #todo kekw do this too :)
+    return round(energyGenerated / 100,1)
 
   def __endActivity(self, energyAvg, highScore, energyDay, energyMonth, distance, phoneCharge, similarScore, isNewHighScore):
     if(not self.hasError):

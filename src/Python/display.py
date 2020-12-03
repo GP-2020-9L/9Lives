@@ -68,7 +68,7 @@ class displayClass(QMainWindow):
             self.setWindowTitle("Results Screen")
             self.widgetStack.setCurrentWidget(self.resultsScreen)
         if event.key() == Qt.Key_5:
-            self.transitionScreen.startAnimation()
+            self.transitionScreen.startAnimation(1500)
       
     def setResultsScreen(self):
       self.setWindowTitle("Results Screen")

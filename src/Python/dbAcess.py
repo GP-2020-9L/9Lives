@@ -73,7 +73,7 @@ class dbAccess():
         isHighestScore = True
       cur.close()
     except (Exception, psycopg2.DatabaseError) as error:
-      print(error.with_traceback())
+      print(error)
       raise
   
   def getBestScore(self):
@@ -87,7 +87,7 @@ class dbAccess():
       cur.close()
       return bestScore[0] if type(bestScore[0]) is not self.NoneType else 0
     except (Exception, psycopg2.DatabaseError) as error:
-      print(error.with_traceback())
+      print(error)
       raise
   
   def getEnergyDay(self):
@@ -101,7 +101,7 @@ class dbAccess():
       cur.close()
       return energyDay[0] if type(energyDay[0]) is not self.NoneType else 0
     except (Exception, psycopg2.DatabaseError) as error:
-      print(error.with_traceback())
+      print(error)
       raise
   
   def getEnergyMonth(self):
@@ -116,6 +116,28 @@ class dbAccess():
       cur.close()
       return energyMonth[0] if type(energyMonth[0]) is not self.NoneType else 0
     except (Exception, psycopg2.DatabaseError) as error:
-      print(error.with_traceback())
+      print(error)
+      raise  
+    
+  def getPercUsers(self, lowerBound, upperBound):
+    try:
+      cur = self.conn.cursor()
+      
+      cur.execute("""SELECT count(energyAvg)
+                    from bike
+                    where energyAvg > %s and energyAvg < %s;""", 
+                    (lowerBound, upperBound))
+      
+      numInRange = cur.fetchone()
+      cur.execute("""SELECT count(energyAvg)
+              from bike""")
+      totalReg = cur.fetchone()
+      cur.close()
+      
+      percUsers = numInRange[0] / totalReg[0]
+      
+      return percUsers if type(percUsers) is not self.NoneType else 0
+    except (Exception, psycopg2.DatabaseError) as error:
+      print(error)
       raise  
     

@@ -181,3 +181,321 @@
 2020-12-03 00:24:22,720 - INFO : dbAccess - insertNewRide -> Insertion completed
 2020-12-03 00:24:22,823 - INFO : dataThread - mainLoop -> Sleeping for 100
 2020-12-03 00:26:03,024 - INFO : dataThread - simulation -> Waiting for user input
+2020-12-03 14:55:24,444 - INFO : dbAccess -> Starting connection to database
+2020-12-03 14:55:24,446 - INFO : dbAccess -> Parsing config file at /mnt/c/Masters/GP/9Lives/src/Database/database.ini
+2020-12-03 14:55:24,459 - INFO : dbAccess -> Config file parse completed
+2020-12-03 14:55:24,554 - INFO : dbAccess -> Connection to postgres established
+2020-12-03 14:55:24,554 - INFO : dataThread -> Starting as data simulation
+2020-12-03 14:55:24,566 - INFO : dataThread - simulation -> Waiting for user input
+2020-12-03 14:55:37,165 - INFO : dbAccess -> Starting connection to database
+2020-12-03 14:55:37,166 - INFO : dbAccess -> Parsing config file at /mnt/c/Masters/GP/9Lives/src/Database/database.ini
+2020-12-03 14:55:37,181 - INFO : dbAccess -> Config file parse completed
+2020-12-03 14:55:37,295 - INFO : dbAccess -> Connection to postgres established
+2020-12-03 14:55:37,296 - INFO : dataThread -> Starting as data simulation
+2020-12-03 14:55:37,439 - INFO : dataThread - simulation -> Waiting for user input
+2020-12-03 14:56:18,360 - INFO : dbAccess -> Starting connection to database
+2020-12-03 14:56:18,361 - INFO : dbAccess -> Parsing config file at /mnt/c/Masters/GP/9Lives/src/Database/database.ini
+2020-12-03 14:56:18,372 - INFO : dbAccess -> Config file parse completed
+2020-12-03 14:56:18,450 - INFO : dbAccess -> Connection to postgres established
+2020-12-03 14:56:18,451 - INFO : dataThread -> Starting as data simulation
+2020-12-03 14:56:18,567 - INFO : dataThread - simulation -> Waiting for user input
+2020-12-03 14:57:17,554 - INFO : dbAccess -> Starting connection to database
+2020-12-03 14:57:17,555 - INFO : dbAccess -> Parsing config file at /mnt/c/Masters/GP/9Lives/src/Database/database.ini
+2020-12-03 14:57:17,566 - INFO : dbAccess -> Config file parse completed
+2020-12-03 14:57:17,650 - INFO : dbAccess -> Connection to postgres established
+2020-12-03 14:57:17,651 - INFO : dataThread -> Starting as data simulation
+2020-12-03 14:57:17,773 - INFO : dataThread - simulation -> Waiting for user input
+2020-12-03 14:58:09,548 - INFO : dbAccess -> Starting connection to database
+2020-12-03 14:58:09,549 - INFO : dbAccess -> Parsing config file at /mnt/c/Masters/GP/9Lives/src/Database/database.ini
+2020-12-03 14:58:09,559 - INFO : dbAccess -> Config file parse completed
+2020-12-03 14:58:09,632 - INFO : dbAccess -> Connection to postgres established
+2020-12-03 14:58:09,632 - INFO : dataThread -> Starting as data simulation
+2020-12-03 14:58:09,766 - INFO : dataThread - simulation -> Waiting for user input
+2020-12-03 14:58:28,732 - INFO : dbAccess -> Starting connection to database
+2020-12-03 14:58:28,733 - INFO : dbAccess -> Parsing config file at /mnt/c/Masters/GP/9Lives/src/Database/database.ini
+2020-12-03 14:58:28,744 - INFO : dbAccess -> Config file parse completed
+2020-12-03 14:58:28,817 - INFO : dbAccess -> Connection to postgres established
+2020-12-03 14:58:28,818 - INFO : dataThread -> Starting as data simulation
+2020-12-03 14:58:28,947 - INFO : dataThread - simulation -> Waiting for user input
+2020-12-03 14:58:38,782 - INFO : dbAccess -> Starting connection to database
+2020-12-03 14:58:38,783 - INFO : dbAccess -> Parsing config file at /mnt/c/Masters/GP/9Lives/src/Database/database.ini
+2020-12-03 14:58:38,794 - INFO : dbAccess -> Config file parse completed
+2020-12-03 14:58:38,868 - INFO : dbAccess -> Connection to postgres established
+2020-12-03 14:58:38,869 - INFO : dataThread -> Starting as data simulation
+2020-12-03 14:58:38,988 - INFO : dataThread - simulation -> Waiting for user input
+2020-12-03 14:58:45,322 - DEBUG : dataThread - simulation -> Avg(5), Std(5), time(5)
+2020-12-03 14:58:45,323 - DEBUG : dataThread - simulation -> Starting simulation of 20 samples
+2020-12-03 14:58:45,324 - DEBUG : dataThread - simulation -> energyRead 1 with 7.060823215188753 V
+2020-12-03 14:58:45,575 - DEBUG : dataThread - simulation -> energyRead 2 with 7.279930981629521 V
+2020-12-03 14:58:45,826 - DEBUG : dataThread - simulation -> energyRead 3 with 9.354629123539642 V
+2020-12-03 14:58:46,077 - DEBUG : dataThread - simulation -> energyRead 4 with 0 V
+2020-12-03 14:58:46,329 - DEBUG : dataThread - simulation -> energyRead 5 with 0 V
+2020-12-03 14:58:46,580 - DEBUG : dataThread - simulation -> energyRead 6 with 0 V
+2020-12-03 14:58:46,832 - DEBUG : dataThread - simulation -> energyRead 7 with 7.252300894007946 V
+2020-12-03 14:58:47,084 - DEBUG : dataThread - simulation -> energyRead 8 with 0.02852099385283502 V
+2020-12-03 14:58:47,336 - DEBUG : dataThread - simulation -> energyRead 9 with 3.740905545064933 V
+2020-12-03 14:58:47,587 - DEBUG : dataThread - simulation -> energyRead 10 with 7.386418244687961 V
+2020-12-03 14:58:47,839 - DEBUG : dataThread - simulation -> energyRead 11 with 5.960394516932083 V
+2020-12-03 14:58:48,090 - DEBUG : dataThread - simulation -> energyRead 12 with 0.6584925215511737 V
+2020-12-03 14:58:48,342 - DEBUG : dataThread - simulation -> energyRead 13 with 0 V
+2020-12-03 14:58:48,594 - DEBUG : dataThread - simulation -> energyRead 14 with 0 V
+2020-12-03 14:58:48,846 - DEBUG : dataThread - simulation -> energyRead 15 with 5.775311162488112 V
+2020-12-03 14:58:49,097 - DEBUG : dataThread - simulation -> energyRead 16 with 0 V
+2020-12-03 14:58:49,348 - DEBUG : dataThread - simulation -> energyRead 17 with 1.216646880567522 V
+2020-12-03 14:58:49,601 - DEBUG : dataThread - simulation -> energyRead 18 with 3.047330767257788 V
+2020-12-03 14:58:49,853 - DEBUG : dataThread - simulation -> energyRead 19 with 0.1615336609298339 V
+2020-12-03 14:58:50,104 - DEBUG : dataThread - simulation -> energyRead 20 with 0 V
+2020-12-03 14:58:50,356 - DEBUG : dataThread - simulation -> Simulation ended with duration 5.0, energyAvg 2.9 and energyPeak 9.4
+2020-12-03 14:58:50,358 - INFO : dbAccess - insertNewRide -> Inserting new ride
+2020-12-03 14:58:50,359 - DEBUG : dbAccess - insertNewRide -> Ride on 2020-12-03 14:58:50.356273 with duration 5.0, energyAvg 2.9 and energyPeak 9.4
+2020-12-03 14:58:50,366 - INFO : dbAccess - insertNewRide -> Insertion completed
+2020-12-03 15:05:55,886 - INFO : dbAccess -> Starting connection to database
+2020-12-03 15:05:55,888 - INFO : dbAccess -> Parsing config file at /mnt/c/Masters/GP/9Lives/src/Database/database.ini
+2020-12-03 15:05:55,901 - INFO : dbAccess -> Config file parse completed
+2020-12-03 15:05:55,990 - INFO : dbAccess -> Connection to postgres established
+2020-12-03 15:05:55,991 - INFO : dataThread -> Starting as data simulation
+2020-12-03 15:05:56,132 - INFO : dataThread - simulation -> Waiting for user input
+2020-12-03 18:03:14,219 - INFO : dbAccess -> Starting connection to database
+2020-12-03 18:03:14,220 - INFO : dbAccess -> Parsing config file at /mnt/c/Masters/GP/9Lives/src/Database/database.ini
+2020-12-03 18:03:14,225 - INFO : dbAccess -> Config file parse completed
+2020-12-03 18:03:14,276 - INFO : dbAccess -> Connection to postgres established
+2020-12-03 18:03:14,276 - INFO : dataThread -> Starting as data simulation
+2020-12-03 18:03:14,343 - INFO : dataThread - simulation -> Waiting for user input
+2020-12-03 18:04:40,755 - INFO : dbAccess -> Starting connection to database
+2020-12-03 18:04:40,756 - INFO : dbAccess -> Parsing config file at /mnt/c/Masters/GP/9Lives/src/Database/database.ini
+2020-12-03 18:04:40,761 - INFO : dbAccess -> Config file parse completed
+2020-12-03 18:04:40,836 - INFO : dbAccess -> Connection to postgres established
+2020-12-03 18:04:40,837 - INFO : dataThread -> Starting as data simulation
+2020-12-03 18:04:40,920 - INFO : dataThread - simulation -> Waiting for user input
+2020-12-03 18:04:43,050 - DEBUG : dataThread - simulation -> Avg(5), Std(5), time(5)
+2020-12-03 18:04:43,051 - DEBUG : dataThread - simulation -> Starting simulation of 20 samples
+2020-12-03 18:04:43,053 - DEBUG : dataThread - simulation -> energyRead 1 with 0.32410985627406674 V
+2020-12-03 18:04:43,304 - DEBUG : dataThread - simulation -> energyRead 2 with 7.46277512522299 V
+2020-12-03 18:04:43,556 - DEBUG : dataThread - simulation -> energyRead 3 with 1.8038016572828997 V
+2020-12-03 18:04:43,807 - DEBUG : dataThread - simulation -> energyRead 4 with 13.203636752719154 V
+2020-12-03 18:04:44,058 - DEBUG : dataThread - simulation -> energyRead 5 with 3.699868347734105 V
+2020-12-03 18:04:44,309 - DEBUG : dataThread - simulation -> energyRead 6 with 5.632009845327209 V
+2020-12-03 18:04:44,560 - DEBUG : dataThread - simulation -> energyRead 7 with 2.4776134174286324 V
+2020-12-03 18:04:44,812 - DEBUG : dataThread - simulation -> energyRead 8 with 4.428323918162128 V
+2020-12-03 18:04:45,063 - DEBUG : dataThread - simulation -> energyRead 9 with 0 V
+2020-12-03 18:04:45,314 - DEBUG : dataThread - simulation -> energyRead 10 with 5.506697415787536 V
+2020-12-03 18:04:45,565 - DEBUG : dataThread - simulation -> energyRead 11 with 16.341262770598934 V
+2020-12-03 18:04:45,817 - DEBUG : dataThread - simulation -> energyRead 12 with 0 V
+2020-12-03 18:04:46,068 - DEBUG : dataThread - simulation -> energyRead 13 with 0 V
+2020-12-03 18:04:46,319 - DEBUG : dataThread - simulation -> energyRead 14 with 6.12002313544339 V
+2020-12-03 18:04:46,570 - DEBUG : dataThread - simulation -> energyRead 15 with 3.873543799034592 V
+2020-12-03 18:04:46,821 - DEBUG : dataThread - simulation -> energyRead 16 with 7.476096369217461 V
+2020-12-03 18:04:47,072 - DEBUG : dataThread - simulation -> energyRead 17 with 8.290045872664702 V
+2020-12-03 18:04:47,323 - DEBUG : dataThread - simulation -> energyRead 18 with 11.720797869362638 V
+2020-12-03 18:04:47,574 - DEBUG : dataThread - simulation -> energyRead 19 with 1.7827815835769933 V
+2020-12-03 18:04:47,825 - DEBUG : dataThread - simulation -> energyRead 20 with 2.5129952462043277 V
+2020-12-03 18:04:48,076 - DEBUG : dataThread - simulation -> Simulation ended with duration 5.0, energyAvg 5.1 and energyPeak 16.3
+2020-12-03 18:04:48,078 - INFO : dbAccess - insertNewRide -> Inserting new ride
+2020-12-03 18:04:48,078 - DEBUG : dbAccess - insertNewRide -> Ride on 2020-12-03 18:04:48.076572 with duration 5.0, energyAvg 5.1 and energyPeak 16.3
+2020-12-03 18:04:48,082 - INFO : dbAccess - insertNewRide -> Insertion completed
+2020-12-03 18:04:48,086 - CRITICAL : dataThread - mainLoop -> getPercUsers() takes 3 positional arguments but 4 were given
+2020-12-03 18:04:48,187 - INFO : dataThread - mainLoop -> Sleeping for 100
+2020-12-03 18:05:48,977 - INFO : dbAccess -> Starting connection to database
+2020-12-03 18:05:48,978 - INFO : dbAccess -> Parsing config file at /mnt/c/Masters/GP/9Lives/src/Database/database.ini
+2020-12-03 18:05:48,983 - INFO : dbAccess -> Config file parse completed
+2020-12-03 18:05:49,035 - INFO : dbAccess -> Connection to postgres established
+2020-12-03 18:05:49,036 - INFO : dataThread -> Starting as data simulation
+2020-12-03 18:05:49,112 - INFO : dataThread - simulation -> Waiting for user input
+2020-12-03 18:05:54,387 - DEBUG : dataThread - simulation -> Avg(10), Std(5), time(5)
+2020-12-03 18:05:54,387 - DEBUG : dataThread - simulation -> Starting simulation of 20 samples
+2020-12-03 18:05:54,388 - DEBUG : dataThread - simulation -> energyRead 1 with 0 V
+2020-12-03 18:05:54,639 - DEBUG : dataThread - simulation -> energyRead 2 with 8.872284837551932 V
+2020-12-03 18:05:54,890 - DEBUG : dataThread - simulation -> energyRead 3 with 12.63634756584517 V
+2020-12-03 18:05:55,141 - DEBUG : dataThread - simulation -> energyRead 4 with 7.71468731277706 V
+2020-12-03 18:05:55,393 - DEBUG : dataThread - simulation -> energyRead 5 with 16.153647120332447 V
+2020-12-03 18:05:55,644 - DEBUG : dataThread - simulation -> energyRead 6 with 6.775067888125083 V
+2020-12-03 18:05:55,896 - DEBUG : dataThread - simulation -> energyRead 7 with 11.8178025123724 V
+2020-12-03 18:05:56,147 - DEBUG : dataThread - simulation -> energyRead 8 with 21.27472262150294 V
+2020-12-03 18:05:56,398 - DEBUG : dataThread - simulation -> energyRead 9 with 6.583518169045714 V
+2020-12-03 18:05:56,649 - DEBUG : dataThread - simulation -> energyRead 10 with 13.259314850505417 V
+2020-12-03 18:05:56,901 - DEBUG : dataThread - simulation -> energyRead 11 with 7.654636401247111 V
+2020-12-03 18:05:57,152 - DEBUG : dataThread - simulation -> energyRead 12 with 1.358503597549701 V
+2020-12-03 18:05:57,403 - DEBUG : dataThread - simulation -> energyRead 13 with 15.494419291274852 V
+2020-12-03 18:05:57,654 - DEBUG : dataThread - simulation -> energyRead 14 with 11.286981879682873 V
+2020-12-03 18:05:57,905 - DEBUG : dataThread - simulation -> energyRead 15 with 9.11840453128549 V
+2020-12-03 18:05:58,156 - DEBUG : dataThread - simulation -> energyRead 16 with 11.860889516674092 V
+2020-12-03 18:05:58,408 - DEBUG : dataThread - simulation -> energyRead 17 with 5.7039940016018456 V
+2020-12-03 18:05:58,659 - DEBUG : dataThread - simulation -> energyRead 18 with 9.77010873824914 V
+2020-12-03 18:05:58,910 - DEBUG : dataThread - simulation -> energyRead 19 with 13.574816330258228 V
+2020-12-03 18:05:59,161 - DEBUG : dataThread - simulation -> energyRead 20 with 6.259056368580646 V
+2020-12-03 18:05:59,412 - DEBUG : dataThread - simulation -> Simulation ended with duration 5.0, energyAvg 9.9 and energyPeak 21.3
+2020-12-03 18:05:59,413 - INFO : dbAccess - insertNewRide -> Inserting new ride
+2020-12-03 18:05:59,414 - DEBUG : dbAccess - insertNewRide -> Ride on 2020-12-03 18:05:59.412221 with duration 5.0, energyAvg 9.9 and energyPeak 21.3
+2020-12-03 18:05:59,418 - INFO : dbAccess - insertNewRide -> Insertion completed
+2020-12-03 18:05:59,421 - CRITICAL : dataThread - mainLoop -> unsupported format character 'w' (0x77) at index 93
+2020-12-03 18:05:59,522 - INFO : dataThread - mainLoop -> Sleeping for 100
+2020-12-03 18:07:39,723 - INFO : dataThread - mainLoop -> Sleeping for 100
+2020-12-03 18:07:55,513 - INFO : dbAccess -> Starting connection to database
+2020-12-03 18:07:55,513 - INFO : dbAccess -> Parsing config file at /mnt/c/Masters/GP/9Lives/src/Database/database.ini
+2020-12-03 18:07:55,518 - INFO : dbAccess -> Config file parse completed
+2020-12-03 18:07:55,572 - INFO : dbAccess -> Connection to postgres established
+2020-12-03 18:07:55,573 - INFO : dataThread -> Starting as data simulation
+2020-12-03 18:07:55,650 - INFO : dataThread - simulation -> Waiting for user input
+2020-12-03 18:07:59,143 - DEBUG : dataThread - simulation -> Avg(10), Std(5), time(5)
+2020-12-03 18:07:59,143 - DEBUG : dataThread - simulation -> Starting simulation of 20 samples
+2020-12-03 18:07:59,145 - DEBUG : dataThread - simulation -> energyRead 1 with 11.361500942799852 V
+2020-12-03 18:07:59,396 - DEBUG : dataThread - simulation -> energyRead 2 with 20.667359775510597 V
+2020-12-03 18:07:59,647 - DEBUG : dataThread - simulation -> energyRead 3 with 16.040748440894543 V
+2020-12-03 18:07:59,898 - DEBUG : dataThread - simulation -> energyRead 4 with 11.245465460351717 V
+2020-12-03 18:08:00,149 - DEBUG : dataThread - simulation -> energyRead 5 with 18.63914659860037 V
+2020-12-03 18:08:00,400 - DEBUG : dataThread - simulation -> energyRead 6 with 20.999612004727645 V
+2020-12-03 18:08:00,651 - DEBUG : dataThread - simulation -> energyRead 7 with 8.600350640071987 V
+2020-12-03 18:08:00,902 - DEBUG : dataThread - simulation -> energyRead 8 with 19.457242891321165 V
+2020-12-03 18:08:01,153 - DEBUG : dataThread - simulation -> energyRead 9 with 10.591373640948364 V
+2020-12-03 18:08:01,403 - DEBUG : dataThread - simulation -> energyRead 10 with 12.528969256570111 V
+2020-12-03 18:08:01,654 - DEBUG : dataThread - simulation -> energyRead 11 with 12.193715574249385 V
+2020-12-03 18:08:01,905 - DEBUG : dataThread - simulation -> energyRead 12 with 12.949415916037204 V
+2020-12-03 18:08:02,156 - DEBUG : dataThread - simulation -> energyRead 13 with 9.021189794025885 V
+2020-12-03 18:08:02,407 - DEBUG : dataThread - simulation -> energyRead 14 with 6.133671139168324 V
+2020-12-03 18:08:02,658 - DEBUG : dataThread - simulation -> energyRead 15 with 2.9889824774091434 V
+2020-12-03 18:08:02,909 - DEBUG : dataThread - simulation -> energyRead 16 with 9.493917278195724 V
+2020-12-03 18:08:03,160 - DEBUG : dataThread - simulation -> energyRead 17 with 16.92937551940099 V
+2020-12-03 18:08:03,411 - DEBUG : dataThread - simulation -> energyRead 18 with 11.789444764238839 V
+2020-12-03 18:08:03,663 - DEBUG : dataThread - simulation -> energyRead 19 with 16.137636208739195 V
+2020-12-03 18:08:03,914 - DEBUG : dataThread - simulation -> energyRead 20 with 12.369594663149899 V
+2020-12-03 18:08:04,165 - DEBUG : dataThread - simulation -> Simulation ended with duration 5.0, energyAvg 13.0 and energyPeak 21.0
+2020-12-03 18:08:04,167 - INFO : dbAccess - insertNewRide -> Inserting new ride
+2020-12-03 18:08:04,167 - DEBUG : dbAccess - insertNewRide -> Ride on 2020-12-03 18:08:04.165637 with duration 5.0, energyAvg 13.0 and energyPeak 21.0
+2020-12-03 18:08:04,172 - INFO : dbAccess - insertNewRide -> Insertion completed
+2020-12-03 18:08:04,176 - CRITICAL : dataThread - mainLoop -> unsupported format character 'w' (0x77) at index 93
+2020-12-03 18:08:04,277 - INFO : dataThread - mainLoop -> Sleeping for 100
+2020-12-03 18:08:30,396 - INFO : dbAccess -> Starting connection to database
+2020-12-03 18:08:30,397 - INFO : dbAccess -> Parsing config file at /mnt/c/Masters/GP/9Lives/src/Database/database.ini
+2020-12-03 18:08:30,401 - INFO : dbAccess -> Config file parse completed
+2020-12-03 18:08:30,452 - INFO : dbAccess -> Connection to postgres established
+2020-12-03 18:08:30,453 - INFO : dataThread -> Starting as data simulation
+2020-12-03 18:08:30,534 - INFO : dataThread - simulation -> Waiting for user input
+2020-12-03 18:08:33,115 - DEBUG : dataThread - simulation -> Avg(5), Std(5), time(5)
+2020-12-03 18:08:33,116 - DEBUG : dataThread - simulation -> Starting simulation of 20 samples
+2020-12-03 18:08:33,116 - DEBUG : dataThread - simulation -> energyRead 1 with 0.8293918825033986 V
+2020-12-03 18:08:33,368 - DEBUG : dataThread - simulation -> energyRead 2 with 6.2969410037849975 V
+2020-12-03 18:08:33,619 - DEBUG : dataThread - simulation -> energyRead 3 with 1.646242619241494 V
+2020-12-03 18:08:33,870 - DEBUG : dataThread - simulation -> energyRead 4 with 12.922743278559876 V
+2020-12-03 18:08:34,121 - DEBUG : dataThread - simulation -> energyRead 5 with 4.70369023773973 V
+2020-12-03 18:08:34,372 - DEBUG : dataThread - simulation -> energyRead 6 with 0.8742249828436677 V
+2020-12-03 18:08:34,623 - DEBUG : dataThread - simulation -> energyRead 7 with 1.4451188741225196 V
+2020-12-03 18:08:34,874 - DEBUG : dataThread - simulation -> energyRead 8 with 13.217129912528108 V
+2020-12-03 18:08:35,125 - DEBUG : dataThread - simulation -> energyRead 9 with 7.238212147280258 V
+2020-12-03 18:08:35,377 - DEBUG : dataThread - simulation -> energyRead 10 with 4.833876199731091 V
+2020-12-03 18:08:35,628 - DEBUG : dataThread - simulation -> energyRead 11 with 4.408807293957874 V
+2020-12-03 18:08:35,880 - DEBUG : dataThread - simulation -> energyRead 12 with 2.4853859588065665 V
+2020-12-03 18:08:36,131 - DEBUG : dataThread - simulation -> energyRead 13 with 6.7276555959145785 V
+2020-12-03 18:08:36,382 - DEBUG : dataThread - simulation -> energyRead 14 with 0.3855957482673906 V
+2020-12-03 18:08:36,633 - DEBUG : dataThread - simulation -> energyRead 15 with 9.274037155664452 V
+2020-12-03 18:08:36,884 - DEBUG : dataThread - simulation -> energyRead 16 with 7.34954441080864 V
+2020-12-03 18:08:37,135 - DEBUG : dataThread - simulation -> energyRead 17 with 11.17861938140282 V
+2020-12-03 18:08:37,386 - DEBUG : dataThread - simulation -> energyRead 18 with 6.470684083015042 V
+2020-12-03 18:08:37,637 - DEBUG : dataThread - simulation -> energyRead 19 with 3.8206685193636356 V
+2020-12-03 18:08:37,888 - DEBUG : dataThread - simulation -> energyRead 20 with 8.159658990120484 V
+2020-12-03 18:08:38,139 - DEBUG : dataThread - simulation -> Simulation ended with duration 5.0, energyAvg 5.7 and energyPeak 13.2
+2020-12-03 18:08:38,141 - INFO : dbAccess - insertNewRide -> Inserting new ride
+2020-12-03 18:08:38,141 - DEBUG : dbAccess - insertNewRide -> Ride on 2020-12-03 18:08:38.139844 with duration 5.0, energyAvg 5.7 and energyPeak 13.2
+2020-12-03 18:08:38,145 - INFO : dbAccess - insertNewRide -> Insertion completed
+2020-12-03 18:08:38,149 - CRITICAL : dataThread - mainLoop -> unsupported format character 'w' (0x77) at index 93
+2020-12-03 18:08:38,249 - INFO : dataThread - mainLoop -> Sleeping for 100
+2020-12-03 18:10:23,977 - INFO : dbAccess -> Starting connection to database
+2020-12-03 18:10:23,978 - INFO : dbAccess -> Parsing config file at /mnt/c/Masters/GP/9Lives/src/Database/database.ini
+2020-12-03 18:10:23,983 - INFO : dbAccess -> Config file parse completed
+2020-12-03 18:10:24,037 - INFO : dbAccess -> Connection to postgres established
+2020-12-03 18:10:24,038 - INFO : dataThread -> Starting as data simulation
+2020-12-03 18:10:24,127 - INFO : dataThread - simulation -> Waiting for user input
+2020-12-03 18:10:25,701 - DEBUG : dataThread - simulation -> Avg(5), Std(5), time(5)
+2020-12-03 18:10:25,702 - DEBUG : dataThread - simulation -> Starting simulation of 20 samples
+2020-12-03 18:10:25,704 - DEBUG : dataThread - simulation -> energyRead 1 with 9.068659774130788 V
+2020-12-03 18:10:25,955 - DEBUG : dataThread - simulation -> energyRead 2 with 5.876102552044081 V
+2020-12-03 18:10:26,206 - DEBUG : dataThread - simulation -> energyRead 3 with 9.132350211694828 V
+2020-12-03 18:10:26,458 - DEBUG : dataThread - simulation -> energyRead 4 with 14.13056288473017 V
+2020-12-03 18:10:26,709 - DEBUG : dataThread - simulation -> energyRead 5 with 1.8803849724031685 V
+2020-12-03 18:10:26,960 - DEBUG : dataThread - simulation -> energyRead 6 with 0.11832073858670089 V
+2020-12-03 18:10:27,211 - DEBUG : dataThread - simulation -> energyRead 7 with 13.593825486403768 V
+2020-12-03 18:10:27,463 - DEBUG : dataThread - simulation -> energyRead 8 with 8.846658927960352 V
+2020-12-03 18:10:27,714 - DEBUG : dataThread - simulation -> energyRead 9 with 7.669103402080733 V
+2020-12-03 18:10:27,966 - DEBUG : dataThread - simulation -> energyRead 10 with 0 V
+2020-12-03 18:10:28,217 - DEBUG : dataThread - simulation -> energyRead 11 with 9.414453436391177 V
+2020-12-03 18:10:28,468 - DEBUG : dataThread - simulation -> energyRead 12 with 3.588560904674295 V
+2020-12-03 18:10:28,719 - DEBUG : dataThread - simulation -> energyRead 13 with 1.383906181112212 V
+2020-12-03 18:10:28,970 - DEBUG : dataThread - simulation -> energyRead 14 with 2.728871266140474 V
+2020-12-03 18:10:29,221 - DEBUG : dataThread - simulation -> energyRead 15 with 4.8646058639649405 V
+2020-12-03 18:10:29,472 - DEBUG : dataThread - simulation -> energyRead 16 with 2.929879387451407 V
+2020-12-03 18:10:29,724 - DEBUG : dataThread - simulation -> energyRead 17 with 6.614471210519129 V
+2020-12-03 18:10:29,975 - DEBUG : dataThread - simulation -> energyRead 18 with 7.501320699775855 V
+2020-12-03 18:10:30,226 - DEBUG : dataThread - simulation -> energyRead 19 with 5.986458417426535 V
+2020-12-03 18:10:30,477 - DEBUG : dataThread - simulation -> energyRead 20 with 4.659350173565172 V
+2020-12-03 18:10:30,728 - DEBUG : dataThread - simulation -> Simulation ended with duration 5.0, energyAvg 6.0 and energyPeak 14.1
+2020-12-03 18:10:30,729 - INFO : dbAccess - insertNewRide -> Inserting new ride
+2020-12-03 18:10:30,730 - DEBUG : dbAccess - insertNewRide -> Ride on 2020-12-03 18:10:30.728466 with duration 5.0, energyAvg 6.0 and energyPeak 14.1
+2020-12-03 18:10:30,734 - INFO : dbAccess - insertNewRide -> Insertion completed
+2020-12-03 18:10:30,752 - CRITICAL : dataThread - mainLoop -> unsupported format character 'w' (0x77) at index 93
+2020-12-03 18:10:30,852 - INFO : dataThread - mainLoop -> Sleeping for 100
+2020-12-03 18:10:49,917 - INFO : dbAccess -> Starting connection to database
+2020-12-03 18:10:49,917 - INFO : dbAccess -> Parsing config file at /mnt/c/Masters/GP/9Lives/src/Database/database.ini
+2020-12-03 18:10:49,921 - INFO : dbAccess -> Config file parse completed
+2020-12-03 18:10:49,974 - INFO : dbAccess -> Connection to postgres established
+2020-12-03 18:10:49,974 - INFO : dataThread -> Starting as data simulation
+2020-12-03 18:10:50,050 - INFO : dataThread - simulation -> Waiting for user input
+2020-12-03 18:10:52,240 - DEBUG : dataThread - simulation -> Avg(5), Std(5), time(5)
+2020-12-03 18:10:52,241 - DEBUG : dataThread - simulation -> Starting simulation of 20 samples
+2020-12-03 18:10:52,242 - DEBUG : dataThread - simulation -> energyRead 1 with 5.547336056317256 V
+2020-12-03 18:10:52,493 - DEBUG : dataThread - simulation -> energyRead 2 with 4.435449963729454 V
+2020-12-03 18:10:52,744 - DEBUG : dataThread - simulation -> energyRead 3 with 0 V
+2020-12-03 18:10:52,995 - DEBUG : dataThread - simulation -> energyRead 4 with 3.836449924883054 V
+2020-12-03 18:10:53,246 - DEBUG : dataThread - simulation -> energyRead 5 with 5.188738819872478 V
+2020-12-03 18:10:53,498 - DEBUG : dataThread - simulation -> energyRead 6 with 12.327488080097872 V
+2020-12-03 18:10:53,748 - DEBUG : dataThread - simulation -> energyRead 7 with 7.705004854212653 V
+2020-12-03 18:10:53,999 - DEBUG : dataThread - simulation -> energyRead 8 with 5.897294450752564 V
+2020-12-03 18:10:54,250 - DEBUG : dataThread - simulation -> energyRead 9 with 6.74876172000965 V
+2020-12-03 18:10:54,501 - DEBUG : dataThread - simulation -> energyRead 10 with 1.6029076189284819 V
+2020-12-03 18:10:54,752 - DEBUG : dataThread - simulation -> energyRead 11 with 6.889883678673819 V
+2020-12-03 18:10:55,004 - DEBUG : dataThread - simulation -> energyRead 12 with 5.857194762162228 V
+2020-12-03 18:10:55,255 - DEBUG : dataThread - simulation -> energyRead 13 with 10.823385553022089 V
+2020-12-03 18:10:55,506 - DEBUG : dataThread - simulation -> energyRead 14 with 3.4818065168398595 V
+2020-12-03 18:10:55,757 - DEBUG : dataThread - simulation -> energyRead 15 with 0 V
+2020-12-03 18:10:56,010 - DEBUG : dataThread - simulation -> energyRead 16 with 2.723992202850356 V
+2020-12-03 18:10:56,261 - DEBUG : dataThread - simulation -> energyRead 17 with 14.184701865548119 V
+2020-12-03 18:10:56,512 - DEBUG : dataThread - simulation -> energyRead 18 with 8.126562451486787 V
+2020-12-03 18:10:56,763 - DEBUG : dataThread - simulation -> energyRead 19 with 13.402993771226054 V
+2020-12-03 18:10:57,014 - DEBUG : dataThread - simulation -> energyRead 20 with 0 V
+2020-12-03 18:10:57,265 - DEBUG : dataThread - simulation -> Simulation ended with duration 5.0, energyAvg 5.9 and energyPeak 14.2
+2020-12-03 18:10:57,267 - INFO : dbAccess - insertNewRide -> Inserting new ride
+2020-12-03 18:10:57,267 - DEBUG : dbAccess - insertNewRide -> Ride on 2020-12-03 18:10:57.265743 with duration 5.0, energyAvg 5.9 and energyPeak 14.2
+2020-12-03 18:10:57,271 - INFO : dbAccess - insertNewRide -> Insertion completed
+2020-12-03 18:10:57,381 - INFO : dataThread - mainLoop -> Sleeping for 100
+2020-12-03 18:11:15,265 - INFO : dbAccess -> Starting connection to database
+2020-12-03 18:11:15,265 - INFO : dbAccess -> Parsing config file at /mnt/c/Masters/GP/9Lives/src/Database/database.ini
+2020-12-03 18:11:15,271 - INFO : dbAccess -> Config file parse completed
+2020-12-03 18:11:15,322 - INFO : dbAccess -> Connection to postgres established
+2020-12-03 18:11:15,323 - INFO : dataThread -> Starting as data simulation
+2020-12-03 18:11:15,395 - INFO : dataThread - simulation -> Waiting for user input
+2020-12-03 18:11:22,815 - DEBUG : dataThread - simulation -> Avg(11), Std(5), time(5)
+2020-12-03 18:11:22,815 - DEBUG : dataThread - simulation -> Starting simulation of 20 samples
+2020-12-03 18:11:22,816 - DEBUG : dataThread - simulation -> energyRead 1 with 2.1747375722715407 V
+2020-12-03 18:11:23,068 - DEBUG : dataThread - simulation -> energyRead 2 with 7.374706726181767 V
+2020-12-03 18:11:23,319 - DEBUG : dataThread - simulation -> energyRead 3 with 12.815124740963876 V
+2020-12-03 18:11:23,569 - DEBUG : dataThread - simulation -> energyRead 4 with 1.0887526786588744 V
+2020-12-03 18:11:23,821 - DEBUG : dataThread - simulation -> energyRead 5 with 11.676115109633464 V
+2020-12-03 18:11:24,072 - DEBUG : dataThread - simulation -> energyRead 6 with 19.746613463199015 V
+2020-12-03 18:11:24,324 - DEBUG : dataThread - simulation -> energyRead 7 with 15.166234805825647 V
+2020-12-03 18:11:24,575 - DEBUG : dataThread - simulation -> energyRead 8 with 17.702029225917244 V
+2020-12-03 18:11:24,826 - DEBUG : dataThread - simulation -> energyRead 9 with 14.455656102323559 V
+2020-12-03 18:11:25,077 - DEBUG : dataThread - simulation -> energyRead 10 with 16.824221113298638 V
+2020-12-03 18:11:25,328 - DEBUG : dataThread - simulation -> energyRead 11 with 12.93555599085857 V
+2020-12-03 18:11:25,580 - DEBUG : dataThread - simulation -> energyRead 12 with 8.18061035258714 V
+2020-12-03 18:11:25,831 - DEBUG : dataThread - simulation -> energyRead 13 with 8.094199747913319 V
+2020-12-03 18:11:26,083 - DEBUG : dataThread - simulation -> energyRead 14 with 10.528424840848253 V
+2020-12-03 18:11:26,334 - DEBUG : dataThread - simulation -> energyRead 15 with 1.2896769158885277 V
+2020-12-03 18:11:26,585 - DEBUG : dataThread - simulation -> energyRead 16 with 5.976802719861263 V
+2020-12-03 18:11:26,836 - DEBUG : dataThread - simulation -> energyRead 17 with 8.067833514728452 V
+2020-12-03 18:11:27,087 - DEBUG : dataThread - simulation -> energyRead 18 with 15.40967043936666 V
+2020-12-03 18:11:27,338 - DEBUG : dataThread - simulation -> energyRead 19 with 10.72540250176216 V
+2020-12-03 18:11:27,590 - DEBUG : dataThread - simulation -> energyRead 20 with 8.480876882177334 V
+2020-12-03 18:11:27,841 - DEBUG : dataThread - simulation -> Simulation ended with duration 5.0, energyAvg 10.4 and energyPeak 19.7
+2020-12-03 18:11:27,843 - INFO : dbAccess - insertNewRide -> Inserting new ride
+2020-12-03 18:11:27,844 - DEBUG : dbAccess - insertNewRide -> Ride on 2020-12-03 18:11:27.841307 with duration 5.0, energyAvg 10.4 and energyPeak 19.7
+2020-12-03 18:11:27,849 - INFO : dbAccess - insertNewRide -> Insertion completed
+2020-12-03 18:11:27,954 - INFO : dataThread - mainLoop -> Sleeping for 100
+2020-12-03 18:13:08,155 - INFO : dataThread - simulation -> Waiting for user input
