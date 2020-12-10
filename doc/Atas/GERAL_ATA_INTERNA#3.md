@@ -47,7 +47,7 @@ Rev # | Autor|  Descrição | Data
 Tarefas | Tarefa realizada por |  Prazo estimado | Prazo real/ tarefa terminada
 --- | --- | --- | ---
 Statement of Work | Gestora de Projeto, Gestora de Clientes e Departamento de Qualidade | Quinta-feira, 21/10/2020 | Quinta-feira, 21/10/2020
-Orçamento do hardware | Gestora de Projeto, Gestora de Clientes e Departamento de Qualidade | Quinta-feira, 21/10/2020 | Quinta-feira, 21/10/2020
+Orçamento do hardware | Gestora de Projeto, Gestora de Clientes | Quinta-feira, 21/10/2020 | Quinta-feira, 21/10/2020
 
 <br/> 
 <br/>
@@ -66,6 +66,6 @@ Implementação do RAID | Toda a equipa | 05/11/2020 |
 </br>
 
 ## Aprovação por qualidade
-#### <b> Nome:</b> 
+#### <b> Nome: Ana Sofia Lebreiro </b> 
 #### <b> Data:</b> 
 
