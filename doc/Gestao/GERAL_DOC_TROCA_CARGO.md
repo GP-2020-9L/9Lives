@@ -31,5 +31,5 @@ Gestor de projeto.
 | 19/11 | Vera Estanqueiro | Membro de Requisitos | Líder de Testes | Necessidade da abertura do departamento de testes | 
 | 19/11 | Artur Coutinho | Membro de Requisitos | Líder de Requisitos | Mudança de cargo do antigo líder, Martinho Santos |
 | 19/11 | Tiago Faria | Membro de Requisitos | Membro de Testes | Necessidade da abertura do departamento de testes |
-|---|---|---|---|---|
+
 </br>
