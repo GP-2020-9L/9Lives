@@ -1,6 +1,5 @@
 import logging
 import numpy as np
-# import Adafruit_ADS1x15
 
 class dataGeneration():
 
@@ -33,12 +32,6 @@ class dataRead():
   def __init__(self):
     self.logger = logging.getLogger('logs')
     self.logger.setLevel(logging.NOTSET)
-    # self.adc = Adafruit_ADS1x15.ADS1115()
-    self.GAIN = 1
   
   def readData(self):
-    # value1 = self.adc.read_adc_difference(0, gain=self.GAIN)
-    # value2 = self.adc.read_adc_difference(1, gain=self.GAIN)
-    # value3 = self.adc.read_adc_difference(2, gain=self.GAIN)
-    # value4 = self.adc.read_adc_difference(3, gain=self.GAIN)
     pass

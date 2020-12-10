@@ -1,8 +1,7 @@
-
+import logging
+import pathlib
 import psycopg2
 import configparser
-import pathlib
-import logging
 class dbAccess():
   """
   This class is responsible for all accesses to the database
@@ -68,13 +67,17 @@ class dbAccess():
                     from bike;""")
       
       highScore = cur.fetchone()
-      
-      if(rideEnergyAvg > highScore):
+      if(type(highScore[0]) is self.NoneType):
         isHighestScore = True
+      else:  
+        if(rideEnergyAvg > highScore[0]):
+          isHighestScore = True
       cur.close()
     except (Exception, psycopg2.DatabaseError) as error:
       print(error)
       raise
+    
+    return isHighestScore
   
   def getBestScore(self):
     try:
@@ -119,24 +122,23 @@ class dbAccess():
       print(error)
       raise  
     
-  def getPercUsers(self, lowerBound, upperBound):
+  def getSimilarScore(self, lowerBound, upperBound):
     try:
       cur = self.conn.cursor()
       
       cur.execute("""SELECT count(energyAvg)
                     from bike
-                    where energyAvg > %s and energyAvg < %s;""", 
+                    where energyAvg >= %s and energyAvg <= %s;""", 
                     (lowerBound, upperBound))
       
       numInRange = cur.fetchone()
       cur.execute("""SELECT count(energyAvg)
-              from bike""")
+                     from bike""")
       totalReg = cur.fetchone()
       cur.close()
       
       percUsers = numInRange[0] / totalReg[0]
-      
-      return percUsers if type(percUsers) is not self.NoneType else 0
+      return percUsers * 100 if type(percUsers) is not self.NoneType else 0
     except (Exception, psycopg2.DatabaseError) as error:
       print(error)
       raise  

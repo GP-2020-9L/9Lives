@@ -1,18 +1,17 @@
+from datetime import datetime
+from threading import Timer
 from sys import *
 import time
 import logging
-from datetime import datetime
-from PyQt5.QtWidgets import *
-from PyQt5.QtCore import *
+import traceback
+import numpy as np
 from PyQt5.QtGui import *
-# from Python.dataInput import dataGeneration, dataRead
+from PyQt5.QtCore import *
+from PyQt5.QtWidgets import *
+
 from dbAcess import *
 from display import *
 from dataInput import *
-from threading import Timer
-import numpy as np
-import math
-import traceback
 
 if __name__ == "__main__":
   # main()
@@ -23,7 +22,7 @@ if __name__ == "__main__":
   
   app = QApplication(argv)
   window = displayClass()
-  window.setWindowFlags(Qt.WindowCloseButtonHint | Qt.WindowType_Mask | Qt.FramelessWindowHint)
+  window.setWindowFlags(Qt.WindowCloseButtonHint | Qt.WindowType_Mask)# | Qt.FramelessWindowHint)
   # window.showFullScreen()
   window.setFixedWidth(1280)
   window.setFixedHeight(1024)
@@ -54,9 +53,10 @@ class dataThread(QThread):
       self.logger.critical('dataThread - __init__ -> {0}'.format(error))
       self.hasError = True
 
-    self.restLimit = 2        #? Amount of time that is possible to stop before activity is ended
-    self.readInterval = 0.25      #? Intervals between each read
-    self.numGroups = 5        #? Number of groups to determine the percentage of players with similar score
+    self.restLimit = 2         #? Amount of time that is possible to rest before activity is ended
+    self.readInterval = 0.25   #? Intervals between each read
+    self.numGroups = 10        #? Number of groups to determine the percentage of players with similar score
+    self.scoreScreenTime = 20  #? Amount of time the results screen displays
     
     self.highScore = 0
     self.energyDay = 0
@@ -94,7 +94,7 @@ class dataThread(QThread):
             duration = 0
             
             self.logger.info("dataThread - simulation -> Waiting for user input")
-            avg, std, duration = map(int, sys.stdin.readline().strip().split())
+            avg, std, duration = map(int, stdin.readline().strip().split())
             self.logger.debug("dataThread - simulation -> Avg({0}), Std({1}), time({2})".format(avg,std,duration))
           
             samples = int(duration / self.readInterval)
@@ -107,7 +107,7 @@ class dataThread(QThread):
               energyRead = self.dataSource.generateData(avg, std, samples)
               generatedPower += energyRead
               if (energyRead > energyPeak): 
-                energyPeak = energyRead 
+                energyPeak = energyRead
               self.updateActivityRead.emit(({"curEnergy":energyRead, "energyPeak":energyPeak}))
               self.logger.debug("dataThread - simulation -> energyRead {0} with {1} V".format(i+1,energyRead))
               time.sleep(self.readInterval)
@@ -158,7 +158,13 @@ class dataThread(QThread):
             phoneCharge = self.__calcBatteryCharge(energyAvg * duration)
             
             increment = self.highScore / self.numGroups
-            similarScore = round(self.database.getPercUsers(math.floor(energyAvg/increment),math.ceil(energyAvg/increment)), 1)
+            lowerBoundScore = 0
+            upperBoundScore = 0
+            while(upperBoundScore < energyAvg):
+              upperBoundScore += increment
+            lowerBoundScore = upperBoundScore - increment
+            
+            similarScore = round(self.database.getSimilarScore(lowerBoundScore, upperBoundScore), 1)
             Timer(2, self.__endActivity, (energyAvg, self.highScore, self.energyDay, self.energyMonth, distance, phoneCharge, similarScore, isNewHighScore)).start()
             
             activityStartTime = 0
@@ -172,9 +178,14 @@ class dataThread(QThread):
           traceback.print_exc()
           self.logger.critical('dataThread - mainLoop -> {0}'.format(error))
           self.hasError = True
+          errorScreenData = {"highScore": self.highScore, "energyDay":self.energyDay, "energyMonth":self.energyMonth}
+          self.errorScreen.emit(errorScreenData)
       else:
-        self.logger.info('dataThread - mainLoop -> Sleeping for 100')
-        time.sleep(100)
+        if(self.hasError):
+          errorScreenData = {"highScore": self.highScore, "energyDay":self.energyDay, "energyMonth":self.energyMonth}
+          self.errorScreen.emit(errorScreenData)
+          self.logger.info('dataThread - mainLoop -> Error: sleeping for 100')
+          time.sleep(100)
       time.sleep(0.1)
 
   def __calcBatteryCharge(self, energyGenerated):
@@ -188,12 +199,10 @@ class dataThread(QThread):
               "similarScore": similarScore, "isNewHighScore":isNewHighScore}
       self.scoreActivity.emit(activityResults)
 
-      Timer(5, self.__resetActivity, (highScore, energyDay, energyMonth)).start()
       self.processingData = False
+      Timer(self.scoreScreenTime, self.__resetActivity, (highScore, energyDay, energyMonth)).start()
 
   def __resetActivity(self, highScore, energyDay, energyMonth):
     if(not self.hasError):
-      idleScreenData = {"highScore":highScore, 
-                    "energyDay":energyDay,
-                    "energyMonth":energyMonth}
+      idleScreenData = {"highScore":highScore, "energyDay":energyDay, "energyMonth":energyMonth}
       self.idleScreen.emit(idleScreenData) 

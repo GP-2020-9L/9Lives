@@ -1,10 +1,9 @@
 import logging
-import sys
 import pathlib
-from PyQt5.QtWidgets import *
-from PyQt5.QtCore import *
-from PyQt5.QtGui import *
 from main import dataThread
+from PyQt5.QtGui import *
+from PyQt5.QtCore import *
+from PyQt5.QtWidgets import *
 
 #! 1280 x 1024
 class displayClass(QMainWindow):
@@ -32,7 +31,6 @@ class displayClass(QMainWindow):
         
     def __startThread(self):
       self.dataThread = dataThread()
-      print(1)
       self.dataThread.startActivity.connect(self.startActivity)
       self.dataThread.updateActivityRead.connect(self.updateActivityRead)
       self.dataThread.endActivity.connect(self.endActivity)
@@ -42,9 +40,7 @@ class displayClass(QMainWindow):
       self.dataThread.start()
 
     def closeEvent(self, event):
-        ret = QMessageBox.question(self, 'Close request', 'Are you sure you want to quit?',
-                                         QMessageBox.Yes | QMessageBox.No,
-                                         QMessageBox.Yes)
+        ret = QMessageBox.question(self, 'Close request', 'Are you sure you want to quit?', QMessageBox.Yes | QMessageBox.No, QMessageBox.Yes)
         if ret == QMessageBox.Yes:
             qApp.quit()
         else:
@@ -110,6 +106,7 @@ class displayClass(QMainWindow):
         self.resultsScreen.setStandardBg()
       self.widgetStack.setCurrentWidget(self.resultsScreen)
       self.resultsScreen.updateText(userScore, highScore, energyDay, energyMonth, distance, phoneCharge, similarScore)
+      self.inActivity = False
       
     def setIdleScreen(self, idleScreenData):
       if(not self.inActivity):
