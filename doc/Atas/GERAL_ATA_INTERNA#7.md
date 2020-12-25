@@ -28,7 +28,6 @@
 Rev # | Autor|  Descrição | Data
 --- | --- | --- | ---
 0.1 | Luiza Almeida | criação da ata | 10/12/2020
-0.2 | Luiza Almeida | correção da última conclusão | 
 
 <br/>
 <br/>
@@ -72,6 +71,6 @@ Organização para a próxima apresentação, 04/12/2020 | Gestão de Projeto | 
 </br>
 
 ## Aprovação por qualidade
-#### <b> Nome:</b> 
-#### <b> Data:</b> 
+#### <b> Nome: Ana Sofia Lebreiro </b> 
+#### <b> Data: 14/12/2020</b> 
 
