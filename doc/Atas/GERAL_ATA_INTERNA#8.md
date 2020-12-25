@@ -31,7 +31,7 @@
 Rev # | Autor|  Descrição | Data
 --- | --- | --- | ---
 0.1 | Luiza Almeida | criação da ata | 10/12/2020
-0.2 | Luiza Almeida | correção da última conclusão | 
+0.2 | Luiza Almeida | correção da última conclusão | 25/12/2020
 
 <br/>
 <br/>
@@ -57,7 +57,6 @@ Organização para a próxima apresentação, 04/12/2020 | Gestão de Projeto | 
 <br/>
 
 ## Tarefas a realizar
-* Mudanças decididas pela equipa
 * Budget após acrescentar as mudanças para comparar com o atual 
 <br/>
 
@@ -65,7 +64,6 @@ Organização para a próxima apresentação, 04/12/2020 | Gestão de Projeto | 
 
 Tarefas | Tarefa será realizada por |  Prazo estimado
 --- | --- | --- | 
-Mudanças decididas pela equipa | Todos os Departamentos | à definir | 
 Budget após acrescentar as mudanças para comparar com o atual | Gestão de Projeto e Gestão de Clientes | Sexta-feira, 04/12/2020 | 
 
 
@@ -73,6 +71,6 @@ Budget após acrescentar as mudanças para comparar com o atual | Gestão de Pro
 </br>
 
 ## Aprovação por qualidade
-#### <b> Nome:</b> 
-#### <b> Data:</b> 
+#### <b> Nome: Ana Sofia Lebreiro </b> 
+#### <b> Data: 25/12/2020 </b> 
 
