@@ -2,7 +2,7 @@
 
 ## <p style='padding-left:15%'> <b> 9Lives </b> <insert date_dime></p>
 
-### <p style='padding-left:65%'> <b>Data:</b> Domingo, 07/12/2020 <insert date_dime></p>
+### <p style='padding-left:65%'> <b>Data:</b> Domingo, 06/12/2020 <insert date_dime></p>
 ### <p style='padding-left:65%'> <b>Hora:</b> 16:00 – 17:00  <insert date_dime></p>
 ### <p style='padding-left:65%'> <b>Local:</b> DISCORD<insert date_dime></p>
 
@@ -27,7 +27,7 @@
 Rev # | Autor|  Descrição | Data
 --- | --- | --- | ---
 0.1 | Luiza Almeida | criação da ata | 10/12/2020
-0.2 | Luiza Almeida | correção da última conclusão | 
+0.2 | Luiza Almeida | correção da última conclusão | 25/12/2020
 
 <br/>
 <br/>
@@ -49,7 +49,7 @@ Rev # | Autor|  Descrição | Data
 
 Tarefas | Tarefa realizada por |  Prazo estimado | Prazo real/ tarefa terminada
 --- | --- | --- | ---
-Organização do planeamento semanal por departamento | Líderes dos Departamentos | Domingo, 07/12/2020 | Domingo, 07/12/2020
+Organização do planeamento semanal por departamento | Líderes dos Departamentos | Domingo, 06/12/2020 | Domingo, 06/12/2020
 Budget após acrescentar as mudanças para comparar com o atual  Gestão de Projeto e Gestão de Clientes | Sexta-feira, 04/12/2020 | Sexta-feira, 04/12/2020
  ---
 
@@ -69,13 +69,13 @@ Tarefas | Tarefa será realizada por |  Prazo estimado
 --- | --- | --- |  
 Organização para a próxima apresentação, 11/12/2020 | Gestão de Projeto | 11/12/2020 |  
 Determinação da deadline do projeto | Equipa | 17/12/2020 |
-Mudanças do projeto | Todos os departamentos | à definir |
+Mudanças do projeto | Todos os departamentos | 10/12/2020 |
 
 
 </br>
 </br>
 
 ## Aprovação por qualidade
-#### <b> Nome:</b> 
-#### <b> Data:</b> 
+#### <b> Nome: Ana Sofia Lebreiro </b> 
+#### <b> Data: 14/12/2020 </b> 
 
