@@ -66,6 +66,6 @@ Gantt atualizado | Gestão de Projeto | Sexta-feira, 11/12/2020 |
 </br>
 
 ## Aprovação por qualidade
-#### <b> Nome:</b> 
-#### <b> Data:</b> 
+#### <b> Nome: Ana Sofia Lebreiro</b> 
+#### <b> Data: 21/01/21</b> 
 
