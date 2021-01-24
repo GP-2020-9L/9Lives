@@ -66,6 +66,6 @@ Mudanças a serem feitas no mockup  | Departamento de Arquitetura e Design | Nã
 </br>
 
 ## Aprovação por qualidade
-#### <b> Nome:</b> 
-#### <b> Data:</b> 
+#### <b> Nome: Ana Sofia Lebreiro </b> 
+#### <b> Data: 20/01/21 </b> 
 
