@@ -24,7 +24,7 @@
 <br/>
 
 ## <b> Tópicos abordados </b>
-* Planejamento de tarefas restantes
+* Planeamento de tarefas futuras
 * Comunicação com o cliente
 <br/>
 
@@ -40,5 +40,5 @@ Mudanças nos Mockups | Departamento de Requisitos | 20/01/2021 |
 </br>
 
 ## Aprovação por qualidade
-#### <b> Nome:</b> 
-#### <b> Data:</b> 
+#### <b> Nome: Sofia Lebreiro</b> 
+#### <b> Data: 30/01/21 </b> 
