@@ -46,5 +46,5 @@ Finalização do documento de Testes | Departamento de Testes | 31/01/2021 |
 </br>
 
 ## Aprovação por qualidade
-#### <b> Nome:</b> 
-#### <b> Data:</b> 
+#### <b> Nome: Sofia Lebreiro</b> 
+#### <b> Data: 30/01/21</b> 
