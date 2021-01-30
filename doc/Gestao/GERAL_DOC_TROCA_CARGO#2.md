@@ -6,7 +6,7 @@
 
 ---
 
-Neste ficheiro dererão ficar indicadas todas as mudanças de troca de cargo existentes ao longo da realização do projeto.
+Neste ficheiro deverão ficar indicadas todas as mudanças de troca de cargo existentes ao longo da realização do projeto.
 
 </br>
 
