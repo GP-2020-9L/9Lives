@@ -28,5 +28,4 @@ Gestor de projeto.
 | 20/11 | Caio Walter | Membro de QUA  | Membro de QUA e Membro de Testes | Necessidade de membros |
 | 20/11 | Sara Inácio | Membro de Requisitos (REQ)  | Membro de REQ e Membro de Testes | Necessidade de membros |
 
-|---|---|---|---|---|
 </br>
