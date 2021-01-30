@@ -38,9 +38,9 @@
 <br/>
 <br/>
 
-Tarefas | Tarefa realizada por |  Prazo estimado | Prazo real/ tarefa terminada
+Tarefas | Tarefa realizada por |  Prazo estimado | 
 --- | --- | --- | ---
-Adequação dos Mockups | Departamento de Requisitos | -- | --
+Adequação dos Mockups | Departamento de Requisitos | 29 Jan |
 <br/> 
 <br/>
 
@@ -63,5 +63,5 @@ Finalização do documento de Testes | Departamento de Testes | 31/01/2021 |
 </br>
 
 ## Aprovação por qualidade
-#### <b> Nome:</b> 
-#### <b> Data:</b> 
+#### <b> Nome: Sofia Lebreiro</b> 
+#### <b> Data: 30/01/21 </b> 
