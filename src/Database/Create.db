@@ -2,7 +2,10 @@ CREATE TABLE bike
 (
     id serial NOT NULL PRIMARY KEY,
     date timestamp NOT NULL,
-    energyAvg double precision NOT NULL,
-    energyPeak double precision NOT NULL,
+    voltAvg double precision NOT NULL,
+    ampAvg double precision NOT NULL,
+    voltPeak double precision NOT NULL,
+    energyGenerated double precision NOT NULL,
+    score double precision NOT NULL,
     duration double precision NOT NULL
 );

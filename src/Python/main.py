@@ -28,7 +28,6 @@ if __name__ == "__main__":
   window.setFixedHeight(1024)
   window.show()
   exit(app.exec_())
-  
 
 class dataThread(QThread):
   
@@ -41,7 +40,6 @@ class dataThread(QThread):
 
   def __init__(self):
     QThread.__init__(self)
-    
     self.processingData = False
     self.hasError = False
     
@@ -57,10 +55,15 @@ class dataThread(QThread):
     self.readInterval = 0.25   #? Intervals between each read
     self.numGroups = 10        #? Number of groups to determine the percentage of players with similar score
     self.scoreScreenTime = 20  #? Amount of time the results screen displays
+    self.metersPerVoltPerSecond = 1.33
     
     self.highScore = 0
     self.energyDay = 0
     self.energyMonth = 0
+    self.peakVoltage = 0
+    self.highestDistance = 0
+    
+    self.idleTimer = Timer(self.scoreScreenTime, self.__resetActivity)
 
     if __debug__: 
       self.logger.info("dataThread -> Starting as data simulation")
@@ -70,93 +73,119 @@ class dataThread(QThread):
       self.logger.info("dataThread -> Starting as sensor reading")
       self.dataSource = dataRead()
       
+    
+      
   def run(self):
     self.highScore = round(self.database.getBestScore(),1)
     self.energyDay = round(self.database.getEnergyDay(),1)
     self.energyMonth = round(self.database.getEnergyMonth(),1)
-
-    self.idleScreen.emit({"highScore":self.highScore, "energyDay":self.energyDay, "energyMonth":self.energyMonth})
+    self.peakVoltage = round(self.database.getPeakVoltage(),1)
+    self.highestDistance = self.database.getHighestDistance()
+    self.actDur = self.highestDistance[1]
+    self.highestDistance = round((self.highestDistance[0] * self.metersPerVoltPerSecond)/1000, 4)
+    self.idleScreen.emit({"highScore":self.highScore, "energyDay":self.energyDay, "energyMonth":self.energyMonth, 
+                          "peakVoltage": self.peakVoltage, "highestDistance": self.highestDistance, "actDur": self.actDur})
     
     activityStartTime = 0
     activityStopTime = 0
     activityEndedTime = 0
-    generatedPower = 0
-    energyPeak = 0
-    energyRead = 0
+    energyGenerated = 0
+    voltPeak = 0
+    ampSum = 0
+    voltSum = 0
+    valuesRead = 0
     
     while(True):
-      
       if(not self.processingData and not self.hasError):
         try:
           if __debug__:
-            avg = 0
-            std = 0
+            ampAvg = 0
+            voltAvg = 0
             duration = 0
             
             self.logger.info("dataThread - simulation -> Waiting for user input")
-            avg, std, duration = map(int, stdin.readline().strip().split())
-            self.logger.debug("dataThread - simulation -> Avg({0}), Std({1}), time({2})".format(avg,std,duration))
+            ampAvg, voltAvg, duration = map(int, stdin.readline().strip().split())
+            self.logger.debug("dataThread - simulation -> ampAvg({0}), voltAvg({1}), time({2})".format(ampAvg,voltAvg,duration))
+          
+            if self.idleTimer.isAlive():
+              self.idleTimer.cancel()
           
             samples = int(duration / self.readInterval)
             activityStartTime = time.time()
             self.logger.debug("dataThread - simulation -> Starting simulation of {0} samples".format(samples))
             
-            self.startActivity.emit({"curEnergy":0, "energyPeak":0}) #? signal ui to change to activity screen
+            self.startActivity.emit({"voltCur":0, "voltPeak":0, "curDistance":0, "actDur": 0}) #? signal ui to change to activity screen
             
             for i in range(int(samples)):
-              energyRead = self.dataSource.generateData(avg, std, samples)
-              generatedPower += energyRead
-              if (energyRead > energyPeak): 
-                energyPeak = energyRead
-              self.updateActivityRead.emit(({"curEnergy":energyRead, "energyPeak":energyPeak}))
-              self.logger.debug("dataThread - simulation -> energyRead {0} with {1} V".format(i+1,energyRead))
+              valuesRead = self.dataSource.generateData(ampAvg, voltAvg, samples)
+              energyGenerated += (valuesRead.get("volts") * valuesRead.get("amps") * self.readInterval)
+              voltSum += valuesRead.get("volts")
+              ampSum += valuesRead.get("amps")
+              if (valuesRead.get("volts") > voltPeak): 
+                voltPeak = valuesRead.get("volts")
+              self.updateActivityRead.emit(({"voltCur":valuesRead.get("volts"), "voltPeak":voltPeak, 
+                                             "curDistance": round(((voltSum / (1/self.readInterval)) * self.metersPerVoltPerSecond)/1000, 4), 
+                                             "actDur": round(time.time()  - activityStartTime, 1)}))
+              self.logger.debug("dataThread - simulation -> valuesRead {0} with {1} V".format(i+1,valuesRead))
               time.sleep(self.readInterval)
             activityStopTime = time.time()   
-          else: # todo finish energy read from sensor
-            energyRead = self.dataSource.readData()
-            if (energyRead > 0):
-              self.logger.info("dataThread - sensor -> Starting activity, energy value of {0}".format(energyRead))
-              if (energyRead > energyPeak):
-                energyPeak = energyRead 
-              self.startActivity.emit({"curEnergy":energyRead, "energyPeak":energyPeak}) #? signal ui to change to activity screen
+          else: 
+            valuesRead = self.dataSource.readData()
+            if (valuesRead.get("volts") > 0):
+              self.logger.info("dataThread - sensor -> Starting activity, value of {0}".format(valuesRead))
+              if(self.idleTimer is not None):
+                self.idleTimer.cancel()
+                self.idleTimer = None
+              if (valuesRead.get("volts") > voltPeak):
+                voltPeak = valuesRead.get("volts")
+              self.startActivity.emit({"voltCur":0, "voltPeak":0, "curDistance":0, "actDur": 0}) #? signal ui to change to activity screen
               activityStartTime = time.time()
-              while(energyRead > 0 or activityEndedTime < self.restLimit):
-                self.updateActivityRead.emit(({"curEnergy":energyRead, "energyPeak":energyPeak}))
-                self.logger.info("dataThread - sensor -> energyRead of {0}".format(energyRead))
-                if (energyRead == 0):
+              while(valuesRead.get("volts") > 0 or activityEndedTime < self.restLimit):
+                self.updateActivityRead.emit(({"voltCur":valuesRead.get("volts"), "voltPeak":voltPeak, 
+                                             "curDistance": round(((voltSum / (1/self.readInterval)) * self.metersPerVoltPerSecond)/1000, 4), 
+                                             "actDur": round(time.time()  - activityStartTime, 1)}))
+                self.logger.info("dataThread - sensor -> valuesRead of {0}".format(valuesRead))
+                if (valuesRead.get("volts") == 0):
                   activityEndedTime = time.time() - activityStartTime
                 else:
-                  generatedPower += energyRead
-                  if (energyRead > energyPeak): 
-                    energyPeak = energyRead 
+                  energyGenerated += (valuesRead.get("volts") * valuesRead.get("amps") * self.readInterval)
+                  voltSum += valuesRead.get("volts")
+                  ampSum += valuesRead.get("amps")
+                  if (valuesRead.get("volts") > voltPeak): 
+                    voltPeak = valuesRead.get("volts")
                 time.sleep(self.readInterval)
-                energyRead = self.dataSource.readData()
-            activityStopTime = time.time()
-          if(generatedPower > 0):
+                valuesRead = self.dataSource.readData()
+            activityStopTime = time.time() - self.restLimit
+          if(energyGenerated > 0):
 
             date = datetime.now()
             duration = round(activityStopTime - activityStartTime, 1)
-            energyAvg = round(generatedPower / (duration * (1/self.readInterval)), 1)
-            energyPeak = round(energyPeak, 1)
+            energyAvg = round(energyGenerated / (duration * (1/self.readInterval)), 1)
+            voltPeak = round(voltPeak, 1)
             
             if __debug__:
-              self.logger.debug("dataThread - simulation -> Simulation ended with duration {0}, energyAvg {1} and energyPeak {2}".format(duration, energyAvg, energyPeak))
+              self.logger.debug("dataThread - simulation -> Simulation ended with duration {0}, energyAvg {1} and voltPeak {2}".format(duration, energyAvg, voltPeak))
             else:
-              self.logger.debug("dataThread - energyRead -> Reading ended with duration {0}, energyAvg {1} and energyPeak {2}".format(duration, energyAvg, energyPeak))
+              self.logger.debug("dataThread - valuesRead -> Reading ended with duration {0}, energyAvg {1} and voltPeak {2}".format(duration, energyAvg, voltPeak))
               
             isNewHighScore = self.database.isNewHighScore(energyAvg)
             
-            self.database.insertNewRide(date, energyAvg, energyPeak, duration)
+            self.database.insertNewRide(date, voltSum/(duration * (1/self.readInterval)), ampSum/(duration * (1/self.readInterval)), voltPeak, energyAvg, duration)
             
-            self.endActivity.emit(np.random.normal(2250,200,1)[0])
+            calcTime = np.random.normal(3000,500,1)[0]
+            self.endActivity.emit(calcTime)
             self.processingData = True
 
             self.highScore = round(self.database.getBestScore(),1)
             self.energyDay = round(self.database.getEnergyDay(),1)
             self.energyMonth = round(self.database.getEnergyMonth(),1)
-            distance = 0.25 # todo kekw do this :)
-            phoneCharge = self.__calcBatteryCharge(energyAvg * duration)
-            
+            self.peakVoltage = round(self.database.getPeakVoltage(),1)
+            self.highestDistance = self.database.getHighestDistance()
+            self.actDur = self.highestDistance[1]
+            self.highestDistance = round((self.highestDistance[0] * self.metersPerVoltPerSecond)/1000, 4)
+            distance = round(((voltSum / (1/self.readInterval)) * self.metersPerVoltPerSecond)/1000, 4)
+            phoneCharge = self.__calcBatteryCharge(ampSum, duration)
+
             increment = self.highScore / self.numGroups
             lowerBoundScore = 0
             upperBoundScore = 0
@@ -165,44 +194,52 @@ class dataThread(QThread):
             lowerBoundScore = upperBoundScore - increment
             
             similarScore = round(self.database.getSimilarScore(lowerBoundScore, upperBoundScore), 1)
-            Timer(2, self.__endActivity, (energyAvg, self.highScore, self.energyDay, self.energyMonth, distance, phoneCharge, similarScore, isNewHighScore)).start()
+            Timer((calcTime+250)/1000, self.__endActivity, (energyAvg, self.highScore, self.energyDay, self.energyMonth, distance, phoneCharge, 
+                                                     similarScore, isNewHighScore, self.peakVoltage, self.highestDistance, self.actDur)).start()
             
             activityStartTime = 0
             activityStopTime = 0
             activityEndedTime = 0
-            generatedPower = 0
-            energyPeak = 0
-            energyRead = 0 
+            energyGenerated = 0
+            voltPeak = 0
+            valuesRead = 0 
         except(BaseException) as error:
           print(error)
           traceback.print_exc()
           self.logger.critical('dataThread - mainLoop -> {0}'.format(error))
           self.hasError = True
-          errorScreenData = {"highScore": self.highScore, "energyDay":self.energyDay, "energyMonth":self.energyMonth}
+          errorScreenData = {"highScore": self.highScore, "energyDay":self.energyDay, "energyMonth":self.energyMonth, 
+                             "peakVoltage": self.peakVoltage, "highestDistance": self.highestDistance, "actDur": actDur}
           self.errorScreen.emit(errorScreenData)
       else:
         if(self.hasError):
-          errorScreenData = {"highScore": self.highScore, "energyDay":self.energyDay, "energyMonth":self.energyMonth}
+          errorScreenData = {"highScore": self.highScore, "energyDay":self.energyDay, "energyMonth":self.energyMonth, 
+                             "peakVoltage": self.peakVoltage, "highestDistance": self.highestDistance, "actDur": actDur}
           self.errorScreen.emit(errorScreenData)
           self.logger.info('dataThread - mainLoop -> Error: sleeping for 100')
           time.sleep(100)
       time.sleep(0.1)
 
-  def __calcBatteryCharge(self, energyGenerated):
-    #todo kekw do this too :)
-    return round(energyGenerated / 100,1)
+  def __calcBatteryCharge(self, ampSum, duration):
+    toCharge = 3500 # average battery size of 3500 mAh 
+    avgAmp = (ampSum / duration) / 1000
+    # print((avgAmp / toCharge) * 100)
+    return round((avgAmp / toCharge) * 100,1)
+    # return round(energyGenerated /100,1)
 
-  def __endActivity(self, energyAvg, highScore, energyDay, energyMonth, distance, phoneCharge, similarScore, isNewHighScore):
+  def __endActivity(self, energyAvg, highScore, energyDay, energyMonth, distance, phoneCharge, similarScore, isNewHighScore, peakVoltage, highestDistance, actDur):
     if(not self.hasError):
-      activityResults = {"userScore":energyAvg, "highScore":highScore, "energyDay":energyDay, 
-              "energyMonth":energyMonth, "distance":distance, "phoneCharge": phoneCharge, 
+      activityResults = {"userScore":energyAvg, "highScore":highScore, "actDur":actDur, 
+              "distance":distance, "phoneCharge": phoneCharge, 
               "similarScore": similarScore, "isNewHighScore":isNewHighScore}
       self.scoreActivity.emit(activityResults)
 
       self.processingData = False
-      Timer(self.scoreScreenTime, self.__resetActivity, (highScore, energyDay, energyMonth)).start()
+      self.idleTimer = Timer(self.scoreScreenTime, self.__resetActivity, (highScore, energyDay, energyMonth, peakVoltage, highestDistance, actDur))
+      self.idleTimer.start()
 
-  def __resetActivity(self, highScore, energyDay, energyMonth):
+  def __resetActivity(self, highScore, energyDay, energyMonth, peakVoltage, highestDistance, actDur):
     if(not self.hasError):
-      idleScreenData = {"highScore":highScore, "energyDay":energyDay, "energyMonth":energyMonth}
+      idleScreenData = {"highScore":highScore, "energyDay":energyDay, "energyMonth":energyMonth, 
+                        "peakVoltage": peakVoltage, "highestDistance": highestDistance, "actDur": actDur}
       self.idleScreen.emit(idleScreenData) 
