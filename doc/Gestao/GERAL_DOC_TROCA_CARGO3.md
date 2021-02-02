@@ -18,7 +18,7 @@ Gestor de projeto.
 
 </br>
 
-### **Tabela de Versões**
+### **Tabela de Mudanças**
 
 | Data da mudança | Nome | Cargo anterior | Cargo atual | Razão
 |---|---|---|---|---|
