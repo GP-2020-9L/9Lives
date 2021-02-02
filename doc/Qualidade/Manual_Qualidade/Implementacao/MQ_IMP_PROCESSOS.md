@@ -16,8 +16,8 @@ O Departamento de Implementação é a responsável pela produção do código f
 
 | Nome | Curso | E-mail
 |---|---|---
-| Alexandre Brito| Engenharia Informática | adbrito@student.dei.uc.pt
-| Martinho Santos| Engenharia Informática | martinhos@student.dei.uc.pt
+| Alexandre Brito| MEI | adbrito@student.dei.uc.pt
+| Martinho Santos| MEI | martinhos@student.dei.uc.pt
 
 </br>
 
