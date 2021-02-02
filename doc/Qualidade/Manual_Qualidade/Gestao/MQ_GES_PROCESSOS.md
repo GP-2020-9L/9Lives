@@ -1,5 +1,5 @@
 
-**DOC ID:** IMP
+**DOC ID:** GP
 
 O Departamento de Gestão é responsável pela delegação de tarefas, supervisão de prazos e do bom funcionamento da equipa. 
 
