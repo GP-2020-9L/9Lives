@@ -6,7 +6,7 @@
 
 ---
 
-Neste ficheiro dererão ficar indicadas todas as mudanças de troca de cargo existentes ao longo da realização do projeto.
+Neste ficheiro deverão ficar indicadas todas as mudanças de troca de cargo existentes ao longo da realização do projeto.
 
 </br>
 
@@ -18,7 +18,7 @@ Gestor de projeto.
 
 </br>
 
-### **Tabela de Versões**
+### **Tabela de Mudanças**
 
 | Data da mudança | Nome | Cargo anterior | Cargo atual | Razão
 |---|---|---|---|---|
