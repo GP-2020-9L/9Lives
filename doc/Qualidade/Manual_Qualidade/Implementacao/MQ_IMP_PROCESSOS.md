@@ -4,7 +4,7 @@ O Departamento de Implementação é a responsável pela produção do código f
 
 | Departamento | Data | Lead
 |---|---|---
-| Imp | 08/11 | -
+| Imp | 08/11 | Alexandre Brito
 
 ### **Tabela de Versões**
 
@@ -16,6 +16,9 @@ O Departamento de Implementação é a responsável pela produção do código f
 
 | Nome | Curso | E-mail
 |---|---|---
+| Alexandre Brito| Engenharia Informática | adbrito@student.dei.uc.pt
+| Martinho Santos| Engenharia Informática | martinhos@student.dei.uc.pt
+
 </br>
 
 ### **Objetivos**
