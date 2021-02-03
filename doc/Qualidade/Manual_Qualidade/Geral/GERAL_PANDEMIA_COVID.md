@@ -57,11 +57,6 @@ Para evitar que a equipa seja infetada todos os contactos dos elementos serão r
 
 </br>
 
-### **Outputs**
-
----
-
-**--**
 
 </br>
 
