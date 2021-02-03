@@ -48,7 +48,7 @@ Inicio do projeto ou chegada de novos módulos.
 6. Ao longo do tempo o departamento de requisitos deve continuar a elaborar o documento de requisitos.
 7. Na fase final de implementação do código, serão feitos testes e o código será aprovado pelo Coordenador de implementação.
 8. Após ser aprovado, o código será testado pelo *departamento de testes*, e no final, ser aprovado ou não pelo Coordenador.
-9. *Por último, Qualidade deverá validar o software, em que deverá verificar se existem falhas entre os requisitos impostos pelo cliente e o produto apresentado.*
+9. Por último, o departamento de Qualidade deverá validar o software, em que deverá verificar se existem falhas entre os requisitos impostos pelo cliente e o produto apresentado.
 10. Começar este processo novamente para o modulo seguinte.
 
 </br>
