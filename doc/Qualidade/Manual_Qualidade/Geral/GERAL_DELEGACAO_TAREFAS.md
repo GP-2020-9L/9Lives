@@ -68,8 +68,3 @@ Tarefa atribuída a um elemento do grupo.
 
 </br>
 
-### **Aprovação e Validação**
-
----
-
-**--**
